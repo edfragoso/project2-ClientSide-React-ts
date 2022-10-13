@@ -8,10 +8,13 @@ const NavBar = () => {
       <S.Nav>
         <S.Bars />
         <S.NavMenu>
+          <div>
           <S.NavLink to="/">Inicio</S.NavLink>
           <S.NavLink to="/">Cadastre-se</S.NavLink>
           <S.NavLink to="/signin">Entrar</S.NavLink>
+          </div>
           <S.NavDetails>
+            
             <Search />
             <input type="text" placeholder="Buscar" />
           </S.NavDetails>

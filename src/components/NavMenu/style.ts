@@ -47,11 +47,16 @@ export const Bars = styled(FaBars)`
 `;
 
 export const NavMenu = styled.div`
+padding: 0 20px;
   display: flex;
   align-items: center;
   margin-right: -24px;
   width: 100%;
-
+  justify-content: space-between;
+  div{
+    display: flex;
+    gap: 10px;
+  }
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -91,7 +96,7 @@ export const NavBtnLink = styled(Link)`
 
 export const NavDetails = styled.div`
 	${({ theme }) => css`
-  display: flex;
+    display: flex;
 		margin-left: 20rem;
 		align-items: center;
 		gap: 20px;
