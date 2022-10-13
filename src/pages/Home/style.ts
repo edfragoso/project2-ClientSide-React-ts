@@ -31,3 +31,5 @@ export const HomeContentItems = styled.div`
 		padding: 5px;
 	`}
 `;
+
+
