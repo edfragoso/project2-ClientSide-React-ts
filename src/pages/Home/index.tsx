@@ -1,4 +1,4 @@
-import NavBar from "component/NavMenu";
+import NavBar from "components/NavMenu";
 import * as S from "./style";
 
 const Home = () => {
