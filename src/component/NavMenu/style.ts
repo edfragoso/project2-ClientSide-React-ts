@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
+import { colors } from "assets/styles/colors";
 
 export const Nav = styled.nav`
   ${({theme}) => css`
@@ -87,3 +88,41 @@ export const NavBtnLink = styled(Link)`
   `}
   }
 `;
+
+export const NavDetails = styled.div`
+	${({ theme }) => css`
+  display: flex;
+		margin-left: 20rem;
+		align-items: center;
+		gap: 20px;
+		${theme.mixins.input()};
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-right: 0;
+		input {
+			background: transparent;
+			border: none;
+			height: 100%;
+			color: ${theme.colors.textColor};
+		}
+	`}
+`;
+
+export const Search = styled.div`
+	${({ theme }) => css`
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		${theme.mixins.input()};
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-right: 0;
+		input {
+			background: transparent;
+			border: none;
+			height: 100%;
+			color: ${theme.colors.textColor};
+		}
+	`}
+`;
+
