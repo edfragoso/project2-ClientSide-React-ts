@@ -1,6 +1,8 @@
-import NavBar from "components/NavMenu";
+import NavBar from "component/NavMenu";
 import * as S from "./style";
 
+
+const handleSelection = (product: ProductResponse) => {};
 const Home = () => {
   return (
     <>
@@ -8,9 +10,18 @@ const Home = () => {
       <S.Home>
         <S.HomeContent>
           <S.HomeContentItems>
-            Items
-            Items
-            Items
+            <div>
+            <ProductItemList>
+              {Boolean(products.length) &&
+                products.map((product, index) => (
+                  <ProductItem
+                    product={product}
+                    key={`ProductItem-${index}`}
+                    onSelect={handleSelection}
+                  />
+                ))}
+            </ProductItemList>
+            </div>
           </S.HomeContentItems>
         </S.HomeContent>
       </S.Home>
