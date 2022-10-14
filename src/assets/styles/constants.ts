@@ -9,5 +9,5 @@ export const constants = {
 
     bodyFontFamily: 'Barlow',
     bodyFontSize: '14px',
-    bodyLineHeight: '140%',
+    bodyLineHeight: '240%',
 }
