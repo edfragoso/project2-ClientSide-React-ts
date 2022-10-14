@@ -10,7 +10,7 @@ const NavBar = () => {
         <S.NavMenu>
           <div>
           <S.NavLink to="/">Inicio</S.NavLink>
-          <S.NavLink to="/">Cadastre-se</S.NavLink>
+          <S.NavLink to="/users">Cadastre-se</S.NavLink>
           <S.NavLink to="/login">Entrar</S.NavLink>
           </div>
           <S.NavDetails>
