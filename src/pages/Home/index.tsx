@@ -1,16 +1,16 @@
-import NavBar from "components/NavMenu";
 import ProductItem from "components/ProductItem";
 import ProductItemList from "components/ProductItemList";
 import { products } from "mocks/products";
 import { ProductResponse } from "types/Product";
 import * as S from "./style";
+import NavBarr from 'components/NavBar'
 
 
 const handleSelection = (product: ProductResponse) => {};
 const Home = () => {
   return (
     <>
-      <NavBar />
+    <NavBarr/>
       <S.Home>
         <S.HomeContent>
           <S.HomeContentItems>
