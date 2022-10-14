@@ -1,6 +1,6 @@
-import { css } from 'styled-components';
-import { colors } from 'assets/styles/colors';
-import { constants } from 'assets/styles/constants';
+import { css } from "styled-components";
+import { colors } from "assets/styles/colors";
+import { constants } from "assets/styles/constants";
 
 const logoStyle = () => css`
   font-family: ${constants.logoFontFamily};
@@ -25,10 +25,10 @@ const overlay = () => css`
 `;
 
 const buttonOutlineModifiers = {
-    square: () => css`
-          width: 48px;
-    `,
-  };
+  square: () => css`
+    width: 48px;
+  `,
+};
 
 const buttonOutline = (color = colors.primaryColor, square = false) => css`
   height: 48px;
@@ -38,7 +38,7 @@ const buttonOutline = (color = colors.primaryColor, square = false) => css`
   cursor: pointer;
   border: 1px solid ${color};
   color: ${color};
-  ${square && buttonOutlineModifiers.square() }
+  ${square && buttonOutlineModifiers.square()}
 `;
 
 const buttonFilled = (color = colors.primaryColor) => css`
@@ -58,7 +58,7 @@ const buttonFilled = (color = colors.primaryColor) => css`
 
 const buttonIconModifiers = {
   active: () => css`
-		box-shadow: 0px 8px 24px 0px ${colors.shadowColor};
+    box-shadow: 0px 8px 24px 0px ${colors.shadowColor};
   `,
 };
 
@@ -85,6 +85,7 @@ const buttonToggle = (active = false) => css`
 `;
 
 const input = () => css`
+  width: 300px;
   height: 48px;
   border-radius: 8px;
   padding: 14px;
@@ -116,4 +117,4 @@ export const mixins = {
   logoStyle,
   overlay,
   select,
-}
+};
