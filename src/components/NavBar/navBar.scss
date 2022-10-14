@@ -1,0 +1,63 @@
+@import '../../styles/Variaveis.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $baseBg2;
+}
+
+.logo{
+  margin-left: 3rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-image: $logoColor;
+  color: blue;
+  background-clip: text ;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.menu{
+
+  color: black;
+
+  ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    li{
+      margin: 1rem 1.5rem;
+      background-color: rgba(6, 102, 102, 0.408);
+      border-radius: 10px;
+      padding: .5rem 1rem;
+      font-weight: 500;
+      transition: all .5s;
+
+      &:hover{
+        background-color: aquamarine;
+        padding: .7rem 1.5rem;
+      }
+    }
+  }
+
+  #destaque{
+    font-weight: bold;
+    padding: .7rem 1rem;
+    border: solid 1px black;
+    background-color: $primaryColor;
+    
+
+    &:hover{
+      background-color: greenyellow;
+      cursor: pointer;
+      padding: 1rem 1.5rem;
+
+    }
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+}

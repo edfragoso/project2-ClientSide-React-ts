@@ -4,13 +4,15 @@ import ProductItemList from "component/ProductItemList";
 import { products } from "mocks/products";
 import { ProductResponse } from "types/Product";
 import * as S from "./style";
+import NavBarr from '../../components/NavBar'
 
 
 const handleSelection = (product: ProductResponse) => {};
 const Home = () => {
   return (
     <>
-      <NavBar />
+    <NavBarr/>
+      {/* <NavBar /> */}
       <S.Home>
         <S.HomeContent>
           <S.HomeContentItems>
