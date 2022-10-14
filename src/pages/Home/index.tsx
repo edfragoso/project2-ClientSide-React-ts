@@ -1,4 +1,3 @@
-import NavBar from "components/NavMenu";
 import ProductItem from "component/ProductItem";
 import ProductItemList from "component/ProductItemList";
 import { products } from "mocks/products";
@@ -12,7 +11,6 @@ const Home = () => {
   return (
     <>
     <NavBarr/>
-      {/* <NavBar /> */}
       <S.Home>
         <S.HomeContent>
           <S.HomeContentItems>
