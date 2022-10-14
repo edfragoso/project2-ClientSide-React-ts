@@ -1,7 +1,6 @@
-import { ReactComponent as Add } from "assets/icons/add.svg";
 import { HTMLAttributes } from "react";
 import * as S from "./style";
-import NavBar from "components/NavMenu";
+import NavBar from "components/NavBar";
 
 type ManageUsersType = HTMLAttributes<HTMLDivElement>;
 
@@ -26,7 +25,7 @@ const ManageUsers = ({ ...props }: ManageUsersProps) => {
         </S.ManageUsersContent>
         <S.ManageUsersActions>
           <S.ManageUsersActionsCancel>Cancelar</S.ManageUsersActionsCancel>
-          <S.ManageUsersActionsSave>Salvar Mudanças</S.ManageUsersActionsSave>
+          <S.ManageUsersActionsSave>Enviar</S.ManageUsersActionsSave>
         </S.ManageUsersActions>
       </S.ManageUsers>
     </>

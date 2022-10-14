@@ -14,7 +14,7 @@ export default function NavBarr() {
             <NavLink to="/login">Login</NavLink>
           </li>
           <li id="destaque">
-            <NavLink to="/">Cadastre-se</NavLink>
+            <NavLink to="/users">Cadastre-se</NavLink>
           </li>
         </ul>
       </div>
