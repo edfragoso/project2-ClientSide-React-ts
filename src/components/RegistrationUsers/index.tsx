@@ -2,34 +2,34 @@ import { HTMLAttributes } from "react";
 import * as S from "./style";
 import NavBar from "components/NavBar";
 
-type ManageUsersType = HTMLAttributes<HTMLDivElement>;
+type RegistrationUsersType = HTMLAttributes<HTMLDivElement>;
 
-type ManageUsersProps = {} & ManageUsersType;
+type RegistrationUsersProps = {} & RegistrationUsersType;
 
-const ManageUsers = ({ ...props }: ManageUsersProps) => {
+const RegistrationUsers = ({ ...props }: RegistrationUsersProps) => {
   return (
     <>
       <NavBar />
-      <S.ManageUsers {...props}>
-        <S.ManageUsersContent>
-          <S.ManageUsersContentAdd>
-            <S.ManageUsersTitle>Cadastro de Usuários</S.ManageUsersTitle>
+      <S.RegistrationUsers {...props}>
+        <S.RegistrationUsersContent>
+          <S.RegistrationUsersContentAdd>
+            <S.RegistrationUsersTitle>Cadastro de Usuários</S.RegistrationUsersTitle>
             <S.EditForm type="text" placeholder="Nickname" />
             <S.EditForm type="text" placeholder="Nome" />
             <S.EditForm type="text" placeholder="Sobrenome" />
             <S.EditForm type="password" placeholder="Senha" />
             <S.EditForm type="password" placeholder="Confirmar Senha" />
             <S.EditForm type="url" placeholder="Imagem" />
-          </S.ManageUsersContentAdd>
+          </S.RegistrationUsersContentAdd>
           {/*  {"Componente EditUser"} */}
-        </S.ManageUsersContent>
-        <S.ManageUsersActions>
-          <S.ManageUsersActionsCancel>Cancelar</S.ManageUsersActionsCancel>
-          <S.ManageUsersActionsSave>Enviar</S.ManageUsersActionsSave>
-        </S.ManageUsersActions>
-      </S.ManageUsers>
+        </S.RegistrationUsersContent>
+        <S.RegistrationUsersActions>
+          <S.RegistrationUsersActionsCancel>Cancelar</S.RegistrationUsersActionsCancel>
+          <S.RegistrationUsersActionsSave>Enviar</S.RegistrationUsersActionsSave>
+        </S.RegistrationUsersActions>
+      </S.RegistrationUsers>
     </>
   );
 };
 
-export default ManageUsers;
+export default RegistrationUsers;

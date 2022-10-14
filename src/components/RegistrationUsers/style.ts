@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
 import { Theme } from "types/styled-components";
 
-export const ManageUsers = styled.section`
+export const RegistrationUsers = styled.section`
   ${({ theme }) => css`
     padding: 20px;
     background: ${theme.colors.baseBg1};
   `}
 `;
 
-export const ManageUsersTitle = styled.h1`
+export const RegistrationUsersTitle = styled.h1`
   ${({ theme }) => css`
     ${theme.mixins.bodyStyle()};
     color: ${theme.colors.textColor};
@@ -17,7 +17,7 @@ export const ManageUsersTitle = styled.h1`
   `}
 `;
 
-export const ManageUsersContent = styled.div`
+export const RegistrationUsersContent = styled.div`
   ${({ theme }) => css`
     background: ${theme.colors.baseBg2};
     border-radius: 10px;
@@ -33,7 +33,7 @@ export const ManageUsersContent = styled.div`
   `}
 `;
 
-export const ManageUsersContentAdd = styled.div`
+export const RegistrationUsersContentAdd = styled.div`
   ${({ theme }) => css`
     margin-top: 25px;
     display: flex;
@@ -49,7 +49,7 @@ export const ManageUsersContentAdd = styled.div`
   `}
 `;
 
-export const ManageUsersActions = styled.div`
+export const RegistrationUsersActions = styled.div`
   ${() => css`
     margin-top: 20px;
     display: flex;
@@ -57,14 +57,14 @@ export const ManageUsersActions = styled.div`
   `}
 `;
 
-export const ManageUsersActionsCancel = styled.button`
+export const RegistrationUsersActionsCancel = styled.button`
   ${({ theme }) => css`
     width: 172px;
     ${theme.mixins.buttonOutline(theme.colors.secondaryColor)};
   `}
 `;
 
-export const ManageUsersActionsSave = styled.button`
+export const RegistrationUsersActionsSave = styled.button`
   ${({ theme }) => css`
     width: 172px;
     ${theme.mixins.buttonFilled()};
