@@ -1,0 +1,43 @@
+@import "styles/Variaveis.scss";
+
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+  margin-top: 15rem;
+  margin-inline: 5rem;
+}
+body {
+  background-color: $baseForm;
+}
+
+#btnPerfil {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+#addPerfil {
+  display: flex;
+  padding: 0.7rem 2rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  background-color: rgba(240, 249, 255, 0);
+  border: solid blue;
+  color: $textNeutral;
+  transition: all .8s;
+
+  &:hover{
+    background-color: rgb(75, 172, 233);
+    border: solid rgb(43, 11, 228);
+    border-radius: 10px;
+    box-shadow:5px 5px 10px  rgb(0, 0, 0) ;
+    color: black;
+    cursor: pointer;
+    padding-inline: 5rem;
+  }
+
+}
