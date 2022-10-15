@@ -5,3 +5,9 @@ export interface ProductResponse {
     image: string;
     price: number;
   }
+
+  export interface ProfileResponse {
+    id:number;
+    usuario:string;
+    foto:string;
+  }

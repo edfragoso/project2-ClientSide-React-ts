@@ -11,6 +11,9 @@ export default function NavBarr() {
       <div className="menu">
         <ul>
           <li>
+            <NavLink to="/perfil">Perfil</NavLink>
+          </li>
+          <li>
             <NavLink to="/login">Login</NavLink>
           </li>
           <li id="destaque">
