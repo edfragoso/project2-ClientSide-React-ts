@@ -1,7 +1,8 @@
 export interface ProductResponse {
     id: string;
-    name: string;
-    description: string;
+    title: string;
     image: string;
-    price: number;
+    year: number;
+    score: number;
+  
   }

@@ -9,7 +9,7 @@ export const ProductItemListHeader = styled.div`
 	`}
 `;
 
-export const ProductItemListHeaderTitle = styled.h1`
+export const ProductItemListHeaderName = styled.h1`
 	${() => css`
 		margin: 0;
 	`}

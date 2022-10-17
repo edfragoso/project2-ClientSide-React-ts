@@ -7,9 +7,9 @@ const ProductItemList = ({ children }: ProductItemListProps) => {
   return (
     <section>
       <S.ProductItemListHeader>
-        <S.ProductItemListHeaderTitle>
-          Escolha os Filmes
-        </S.ProductItemListHeaderTitle>
+        <S.ProductItemListHeaderName>
+          Escolha dos Jogos
+        </S.ProductItemListHeaderName>
       </S.ProductItemListHeader>
       <S.ProductItemList>{children}</S.ProductItemList>
     </section>

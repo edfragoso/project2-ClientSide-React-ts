@@ -1,13 +1,29 @@
-import NavBar from "component/NavMenu";
-import ProductItem from "component/ProductItem";
-import ProductItemList from "component/ProductItemList";
+import NavBar from "components/NavMenu";
+import ProductItem from "components/ProductItem";
+import ProductItemList from "components/ProductItemList";
+import { details } from "mocks/details";
 import { products } from "mocks/products";
+import { useState } from "react";
 import { ProductResponse } from "types/Product";
+import { ProductItemType } from "types/ProductItemType";
+
+
 import * as S from "./style";
 
 
-const handleSelection = (product: ProductResponse) => {};
+const handleSelection = (product: ProductResponse) => {
+  const existing = details.find((i) => i.details.id === product.id);
+  const item: ProductItemType = {details};
+  const list = existing
+  ? details.map((i) => (i.details.id === existing.details.id ? item : i))
+  : [...details, item];
+  setDetails(list)
+
+};
 const Home = () => {
+
+  const [details, setDetails] = useState<ProductItemType[]>([]);
+
   return (
     <>
       <NavBar />
