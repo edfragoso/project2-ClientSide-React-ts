@@ -1,33 +1,32 @@
-import DetailsItem from "components/DetailsItem";
-import DetailsItemList from "components/DetailsItemList";
-import { details } from "mocks/details";
-import { products } from "mocks/products";
+import { ProductResponse } from "types/Product";
+import { NavLink } from "react-router-dom";
 import * as S from "./style";
 
-const ProductDetails = () => {
-  return (
-    <S.ProductDetails>
-      <S.ProductDetailsTitle>Detalhes do Jogo</S.ProductDetailsTitle>
-      <S.ProductDetailsList>
-        <DetailsItemList
-          list={
-            Boolean(details.length) ? (
-              details.map((item, index) => (
-                <DetailsItem
-                  details={item.details}
-                  key={`ProductDetails-${index}`}
-                  onSelect={}
-                />
-              ))
-            ) : (
-              <S.ProductDetailsListGap />
-            )
-          }
-        />
-      </S.ProductDetailsList>
-    </S.ProductDetails>
-  );
-};
+
+type ProductItemProps = {
+    product: ProductResponse 
+    
+}
+const ProductDetails = ({product}: ProductItemProps) => {
+    return (
+
+        <S.ProductDetail>
+            <S.ProductItemDetailImage src={product.image} alt={`Jogo ${product.title}`}/>
+            <div>
+                <S.ProductItemDetailName>{product.title}</S.ProductItemDetailName>
+                <S.ProductItemDetailYear>{product.year}</S.ProductItemDetailYear>
+                <S.ProductItemDetailScore>{product.score}</S.ProductItemDetailScore>
+                <S.ProductItemDetailDescription>{product.description}</S.ProductItemDetailDescription>
+                <S.ProductItemDetailYoutube>{product.youtube}</S.ProductItemDetailYoutube>
+                <S.ProductItemDetailGameplay>{product.gameplay}</S.ProductItemDetailGameplay>
+                
+            </div>
+            
+
+            {/* <NavLink to="/details">Detalhes</NavLink> */}
+            
+        </S.ProductDetail>
+    );
+}
 
 export default ProductDetails;
-<></>;

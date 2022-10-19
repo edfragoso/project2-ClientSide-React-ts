@@ -11,7 +11,6 @@ export const ProductItem = styled.div`
 		align-items: center;
 		max-width: 200px;
 		width: 100%;
-		cursor: pointer;
 		min-height: 225px;
 		div {
 			display: flex;
@@ -58,3 +57,4 @@ export const ProductItemScore = styled.small`
 		font-size: 12px;
 	`}
 `;
+

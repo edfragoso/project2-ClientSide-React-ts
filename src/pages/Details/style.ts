@@ -31,3 +31,10 @@ export const HomeContentItems = styled.div`
 		padding: 5px;
 	`}
 `;
+
+export const ProductItemListHeaderName = styled.h1`
+	${() => css`
+		margin-left: 300px;
+		
+	`}
+`;

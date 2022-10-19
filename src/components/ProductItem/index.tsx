@@ -1,5 +1,6 @@
 import * as S from "./style";
 import { ProductResponse } from "types/Product";
+import { NavLink } from "react-router-dom";
 
 
 type ProductItemProps = {
@@ -16,6 +17,10 @@ const ProductItem = ({product, onSelect}: ProductItemProps) => {
                 <S.ProductItemYear>{product.year}</S.ProductItemYear>
                 <S.ProductItemScore>{product.score}</S.ProductItemScore>
             </div>
+            
+            
+           
+            
         </S.ProductItem>
     );
 }
