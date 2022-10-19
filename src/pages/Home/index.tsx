@@ -3,7 +3,7 @@ import ProductItem from "components/ProductItem";
 import ProductItemList from "components/ProductItemList";
 
 import { products } from "mocks/products";
-import { useState } from "react";
+// import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ProductResponse } from "types/Product";
 

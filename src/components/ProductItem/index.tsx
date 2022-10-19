@@ -1,6 +1,6 @@
 import * as S from "./style";
 import { ProductResponse } from "types/Product";
-import { NavLink } from "react-router-dom";
+
 
 
 type ProductItemProps = {
