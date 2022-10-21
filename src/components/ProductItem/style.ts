@@ -39,7 +39,7 @@ export const ProductItemName = styled.h3`
 	`}
 `;
 
-export const ProductItemPrice = styled.strong`
+export const ProductItemYear = styled.strong`
 	${({ theme }) => css`
 		${theme.mixins.bodyStyle()}
 		text-align: center;
@@ -49,7 +49,7 @@ export const ProductItemPrice = styled.strong`
 	`}
 `;
 
-export const ProductItemDescription = styled.small`
+export const ProductItemScore = styled.small`
 	${({ theme }) => css`
 		${theme.mixins.bodyStyle()}
 		text-align: center;

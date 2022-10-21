@@ -1,0 +1,44 @@
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.description {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 1rem;
+
+  .descricao {
+    display: grid;
+    align-content: space-between;
+    text-align: justify;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .imgDetails {
+    width: 50rem;
+  }
+}
+
+.boxVideos {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+
+  h3{
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  iframe {
+    max-width: 800px;
+    max-height: 800px;
+  }
+}

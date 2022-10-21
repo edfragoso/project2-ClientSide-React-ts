@@ -9,14 +9,15 @@ const ProductItem = ({product, onSelect}: ProductItemProps) => {
     return (
 
         <S.ProductItem role='listitem' onClick={()=> onSelect(product)}>
-            <S.ProductItemImage src={product.image} alt={`Pizza de ${product.name}`}/>
-            <div>
-                <S.ProductItemName>{product.name}</S.ProductItemName>
-                <S.ProductItemPrice>{product.price}</S.ProductItemPrice>
-                <S.ProductItemDescription>{product.description}</S.ProductItemDescription>
+        <S.ProductItemImage src={product.image} alt={`Jogo ${product.title}`}/>
+        <div>
+                <S.ProductItemName>{product.title}</S.ProductItemName>
+                <S.ProductItemYear>{product.year}</S.ProductItemYear>
+                <S.ProductItemScore>{product.score}</S.ProductItemScore>
             </div>
-        </S.ProductItem>
+            </S.ProductItem>
     );
+            
 }
 
 export default ProductItem;
