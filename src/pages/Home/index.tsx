@@ -18,13 +18,13 @@ const Home = () => {
               <ProductItemList>
                 {Boolean(products.length) &&
                   products.map((product, index) => (
-                    <NavLink to={`/details/${product.id}`}>
+                    // <NavLink to={`/details/${product.id}`}>
                       <ProductItem
                         product={product}
                         key={`ProductItem-${index}`}
                         onSelect={handleSelection}
                       />
-                    </NavLink>
+                    // </NavLink>
                   ))}
               </ProductItemList>
             </div>
