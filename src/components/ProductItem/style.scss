@@ -1,0 +1,60 @@
+@import "styles/Variaveis.scss";
+
+.card {
+  align-items: center;
+  background: #cbd3df;
+  border-radius: 20px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: 550px;
+  margin: 1rem 2rem;
+  width: 250px;
+}
+.imageItem {
+  margin-top: 1rem;
+
+  img {
+    width: 200px;
+  }
+}
+
+.titleItem {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.yearScoreItem {
+  display: flex;
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 23px;
+  margin: 1rem 0;
+}
+a {
+  text-decoration: none;
+}
+
+.btnDetails {
+  background: $btnDetails;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.5rem 1.3rem;
+  transition: all 0.5s;
+
+  &:hover {
+    background: linear-gradient(
+      34deg,
+      rgba(141, 136, 152, 0.9) 19%,
+      rgba(134, 183, 199, 0.9) 49%,
+      rgba(83, 218, 144, 0.9) 90%
+    );
+    font-size: 1.2rem;
+    padding: 0.7rem 1.8rem;
+  }
+}

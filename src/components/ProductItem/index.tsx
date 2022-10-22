@@ -1,23 +1,33 @@
-import * as S from "./style";
 import { ProductResponse } from "types/Product";
+import "./style.scss";
+import { NavLink } from "react-router-dom";
 
 type ProductItemProps = {
-    product: ProductResponse
-    onSelect: (data: ProductResponse) => void
-}
-const ProductItem = ({product, onSelect}: ProductItemProps) => {
-    return (
+  product: ProductResponse;
+  onSelect: (data: ProductResponse) => void;
+};
+const ProductItem = ({ product, onSelect }: ProductItemProps) => {
+  return (
+    <div className="card">
+      <div className="imageItem">
+        <img src={product.image} alt={product.title} />
+      </div>
+      <div className="titleItem">
+        {" "}
+        <h2> {product.title} </h2>{" "}
+      </div>
+      <div className="yearScoreItem">
+        <p>Lançamento: {product.year}</p>
+        <p>Nota: {product.score}/5</p>
+      </div>
+      <NavLink to={`/details/${product.id}`}>
+        <button className="btnDetails" role="listitem">
+          Detalhes
+        </button>
+      </NavLink>
+    </div>
 
-        <S.ProductItem role='listitem' onClick={()=> onSelect(product)}>
-        <S.ProductItemImage src={product.image} alt={`Jogo ${product.title}`}/>
-        <div>
-                <S.ProductItemName>{product.title}</S.ProductItemName>
-                <S.ProductItemYear>{product.year}</S.ProductItemYear>
-                <S.ProductItemScore>{product.score}</S.ProductItemScore>
-            </div>
-            </S.ProductItem>
-    );
-            
-}
+  );
+};
 
 export default ProductItem;
