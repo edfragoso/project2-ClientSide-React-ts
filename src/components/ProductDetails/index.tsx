@@ -1,3 +1,4 @@
+import { products } from "mocks/products";
 import { ProductResponse } from "types/Product";
 import "./Details.scss";
 
@@ -6,33 +7,33 @@ type ProductItemProps = {
 };
 
 const ProductDetails = ({ product }: ProductItemProps) => {
+  const { title, image, description, year, score, trailer, gameplay } = product;
   return (
     <div className="boxDetails">
+      0
       <div className="title">
-        <h2>{product.title}</h2>
+        <h2>{title}</h2>
       </div>
-
       <div className="description">
-        <img src={product.image} alt={product.title} className="imgDetails" />
+        <img src={image} alt={title} className="imgDetails" />
         <div className="descricao">
           <p>
-            {product.description}
+            {description}
             <br />
             <br />
-            ano de lançamento: {product.year}
+            ano de lançamento: {year}
           </p>
 
-          <p>IMDb:{product.score}/5</p>
+          <p>IMDb:{score}/5</p>
         </div>
       </div>
-
       <div className="boxVideos">
         <div>
           <h3>Trailer</h3>
           <iframe
             width="560"
             height="315"
-            src={product.trailer}
+            src={trailer}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -45,7 +46,7 @@ const ProductDetails = ({ product }: ProductItemProps) => {
           <iframe
             width="560"
             height="315"
-            src={product.gameplay}
+            src={gameplay}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

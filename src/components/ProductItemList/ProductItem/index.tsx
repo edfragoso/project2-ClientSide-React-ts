@@ -4,29 +4,28 @@ import { NavLink } from "react-router-dom";
 
 type ProductItemProps = {
   product: ProductResponse;
-  onSelect: (data: ProductResponse) => void;
 };
-const ProductItem = ({ product, onSelect }: ProductItemProps) => {
+const ProductItem = ({ product }: ProductItemProps) => {
+  const { image, title, year, score, id } = product;
   return (
     <div className="card">
       <div className="imageItem">
-        <img src={product.image} alt={product.title} />
+        <img src={image} alt={title} />
       </div>
       <div className="titleItem">
         {" "}
-        <h2> {product.title} </h2>{" "}
+        <h2> {title} </h2>{" "}
       </div>
       <div className="yearScoreItem">
-        <p>Lançamento: {product.year}</p>
-        <p>Nota: {product.score}/5</p>
+        <p>Lançamento: {year}</p>
+        <p>Nota: {score}/5</p>
       </div>
-      <NavLink to={`/details/${product.id}`}>
+      <NavLink to={`/details/${id}`}>
         <button className="btnDetails" role="listitem">
           Detalhes
         </button>
       </NavLink>
     </div>
-
   );
 };
 

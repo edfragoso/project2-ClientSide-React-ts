@@ -1,38 +1,22 @@
-import ProductItem from "components/ProductItem";
 import ProductItemList from "components/ProductItemList";
-import { products } from "mocks/products";
-import { ProductResponse } from "types/Product";
-import * as S from "./style";
 import NavBarr from "components/NavBar";
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import Seek from "components/Seek";
+import './Home.scss';
 
-const handleSelection = (product: ProductResponse) => {};
-const Home = () => {
+function Home() {
+  const [seek, setSeek] = useState("")
   return (
     <>
-      <NavBarr />
-      <S.Home>
-        <S.HomeContent>
-          <S.HomeContentItems>
-            <div>
-              <ProductItemList>
-                {Boolean(products.length) &&
-                  products.map((product, index) => (
-                    // <NavLink to={`/details/${product.id}`}>
-                      <ProductItem
-                        product={product}
-                        key={`ProductItem-${index}`}
-                        onSelect={handleSelection}
-                      />
-                    // </NavLink>
-                  ))}
-              </ProductItemList>
-            </div>
-          </S.HomeContentItems>
-        </S.HomeContent>
-      </S.Home>
+      <header>
+        <NavBarr />
+      </header>
+      <main className="boxHome">
+        <Seek seek={seek} setSeek={setSeek} />
+        <ProductItemList seek={seek} />
+      </main>
     </>
   );
-};
+}
 
 export default Home;
