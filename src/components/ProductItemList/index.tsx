@@ -1,18 +1,34 @@
-import * as S from "./style";
+import { products } from "mocks/products";
+import ProductItem from "./ProductItem";
+import "./List.scss";
+import { useEffect, useState } from "react";
 
-interface ProductItemListProps {
-  children: React.ReactNode;
+interface Props {
+  seek: string ;
+  
 }
-const ProductItemList = ({ children }: ProductItemListProps) => {
+
+const ProductItemList = (props: Props) => {
+  const [list, setList] = useState(products);
+  const { seek} = props;
+
+  function Seek(title: string | any) {
+    const regex = new RegExp(seek, "i");
+    return regex.test(title);
+  }
+ 
+
+  useEffect(() => {
+    const newList = products.filter((item) => Seek(item.title)    )
+    setList(newList);
+  }, [seek]);
+
   return (
-    <section>
-      <S.ProductItemListHeader>
-        <S.ProductItemListHeaderTitle>
-          Escolha os Filmes
-        </S.ProductItemListHeaderTitle>
-      </S.ProductItemListHeader>
-      <S.ProductItemList>{children}</S.ProductItemList>
-    </section>
+    <div className="boxList">
+      {list.map((product, index) => (
+        <ProductItem key={index} product={product} />
+      ))}
+    </div>
   );
 };
 
