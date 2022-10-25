@@ -10,7 +10,7 @@ const ProductDetails = ({ product }: ProductItemProps) => {
   const { title, image, description, year, score, trailer, gameplay } = product;
   return (
     <div className="boxDetails">
-      0
+      
       <div className="title">
         <h2>{title}</h2>
       </div>

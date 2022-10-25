@@ -1,8 +1,9 @@
 import ProductDetails from "components/ProductDetails";
-import * as S from "./style";
+// import * as S from "./style";
 import { products } from "mocks/products";
 import { useParams } from "react-router-dom";
 import NavBarr from "components/NavBar";
+import './Details.scss';
 
 function Details() {
   const { id } = useParams();
@@ -10,7 +11,16 @@ function Details() {
 
   return (
     <>
-      <NavBarr />
+      <header>
+        <NavBarr />
+      </header>
+      <main className="boxDetails">
+        {product ? <ProductDetails product={product} /> : null}
+      </main>
+
+
+
+      {/* <NavBarr />
       <S.Home>
         <S.HomeContent>
           <S.HomeContentItems>
@@ -19,7 +29,7 @@ function Details() {
             </div>
           </S.HomeContentItems>
         </S.HomeContent>
-      </S.Home>
+      </S.Home> */}
     </>
   );
 }
