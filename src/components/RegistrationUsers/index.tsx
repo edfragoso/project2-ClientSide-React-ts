@@ -1,33 +1,52 @@
-import { HTMLAttributes } from "react";
-import * as S from "./style";
-import NavBar from "components/NavBar";
+import NavBarr from "components/NavBar";
+import "./RegistrationUsers.scss";
+import { NavLink } from "react-router-dom";
 
-type RegistrationUsersType = HTMLAttributes<HTMLDivElement>;
 
-type RegistrationUsersProps = {} & RegistrationUsersType;
-
-const RegistrationUsers = ({ ...props }: RegistrationUsersProps) => {
+const RegistrationUsers = () => {
   return (
     <>
-      <NavBar />
-      <S.RegistrationUsers {...props}>
-        <S.RegistrationUsersContent>
-          <S.RegistrationUsersContentAdd>
-            <S.RegistrationUsersTitle>Cadastro de Usuários</S.RegistrationUsersTitle>
-            <S.EditForm type="text" placeholder="Nickname" />
-            <S.EditForm type="text" placeholder="Nome" />
-            <S.EditForm type="text" placeholder="Sobrenome" />
-            <S.EditForm type="password" placeholder="Senha" />
-            <S.EditForm type="password" placeholder="Confirmar Senha" />
-            <S.EditForm type="url" placeholder="Imagem" />
-          </S.RegistrationUsersContentAdd>
-          {/*  {"Componente EditUser"} */}
-        </S.RegistrationUsersContent>
-        <S.RegistrationUsersActions>
-          <S.RegistrationUsersActionsCancel>Cancelar</S.RegistrationUsersActionsCancel>
-          <S.RegistrationUsersActionsSave>Enviar</S.RegistrationUsersActionsSave>
-        </S.RegistrationUsersActions>
-      </S.RegistrationUsers>
+      <header>
+        <NavBarr />
+      </header>
+      <div className="BoxForm">
+        <h1>Faça seu Cadastro</h1>
+        <form action="">
+          <label htmlFor="name">Nome</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Digite seu nome"
+            required
+          />
+          <label htmlFor="email">E-mail</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Digite seu e-mail"
+            required
+          />
+          <label htmlFor="password">Senha</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Digite sua senha"
+            required
+          />
+          <label htmlFor="cpf">CPF</label>
+          <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF" />
+        </form>
+
+        <div className="check">
+          Administrador <input type="checkbox" name="adm" id="adm" required />
+        </div>
+        <NavLink to={"/login"}>
+        <button type="submit">Cadastrar</button>
+        </NavLink>
+      </div>
     </>
   );
 };

@@ -1,0 +1,92 @@
+@import 'styles/Variaveis.scss';
+
+.BoxForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+
+    h1 {
+        color: #fff;
+        font-size: 1.8rem;
+        text-shadow: 2px 2px 8px grey;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: .3rem;
+            color: #fff;
+            margin-left: .5rem;
+            text-shadow: 2px 2px 8px grey;
+            
+        }
+
+        input {
+            width: 250px;
+            padding: .2rem .4rem;
+            font-size: 1rem;
+            border-radius: .3rem;
+            border: solid 1px;
+            color:grey;
+        }
+
+        h2 {
+            font-size: 1rem;
+            color:#fff;
+            text-shadow: 2px 2px 8px grey;
+            margin-top: 1rem;
+            
+        }
+
+        #reset {
+            margin-bottom: 1rem;
+            border-radius: .3rem;
+            width: 250px;
+            height: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all .5s;
+
+
+        &:hover{
+            cursor: pointer;
+            scale:  1.1;
+            border: none;
+            background-color: #d9d9df;
+            }
+        }
+    }
+
+    .check{
+        margin: 1rem;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        text-shadow: 2px 2px 8px grey;
+    }
+
+    button {
+        flex-direction: row;
+        border-radius: .3rem;
+        border: none;
+        width: 250px;
+        height: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all .5s;
+    
+    
+        &:hover{
+            cursor: pointer;
+            scale:  1.1;
+            border: none;
+            background-color: #d9d9df;
+        }
+    }
+}

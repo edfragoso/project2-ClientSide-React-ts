@@ -1,7 +1,3 @@
-// import * as S from "./style";
-// import logo from "assets/imgs/logo.png";
-// import ButtonLarge from "components/ButtonLarge";
-// import { HTMLAttributes, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./BoxLogin.scss";
 
@@ -26,7 +22,9 @@ const BoxLogin = () => {
       </form>
       <div className="links">
         <NavLink to={"/users"}>Cadastre-se</NavLink>
-        <button type="submit">Enviar</button>
+        <NavLink to={"/"}>
+        <button type="submit">Entrar</button>
+        </NavLink>
       </div>
     </div>
   );
