@@ -1,54 +1,34 @@
-import * as S from "./style";
-import logo from "assets/imgs/logo.png";
-import ButtonLarge from "components/ButtonLarge";
-import { HTMLAttributes, useState } from "react";
+// import * as S from "./style";
+// import logo from "assets/imgs/logo.png";
+// import ButtonLarge from "components/ButtonLarge";
+// import { HTMLAttributes, useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./BoxLogin.scss";
 
-type BoxLoginType = HTMLAttributes<HTMLDivElement>;
-
-export type BoxLoginProps = {
-  onSubmitData: (data: { nickname: string; password: string }) => void;
-  errorMessage: string;
-} & BoxLoginType;
-
-const BoxLogin = ({ onSubmitData, errorMessage }: BoxLoginProps) => {
-  const [nickname, setNickname] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (): void => {
-    const data = { nickname, password };
-    onSubmitData(data);
-  };
+const BoxLogin = () => {
+ 
 
   return (
-    <S.BoxLogin>
-      <S.BoxLoginLogo>
-        <S.BoxLoginLogoText>
-          <span>Project2</span>
-          <span>Frontend</span>
-        </S.BoxLoginLogoText>
-        {/* <S.BoxLoginLogoImage src={logo} alt="Logo" /> */}
-      </S.BoxLoginLogo>
-      <S.BoxLoginForm>
+    <div className="BoxLogin">
+      <h1>Faça seu Login</h1>
+
+      <form action="">
+        <label htmlFor="email">E-mail</label>
         <input
-          type="text"
-          placeholder="Nickname"
-          value={nickname}
-          onChange={({ target }) => setNickname}
+          type="email"
+          name="email"
+          id="email"
+          placeholder="email@email.com"
+          required
         />
-        <input
-          type="password"
-          placeholder="Senha"
-          value={password}
-          onChange={({ target }) => setPassword}
-        />
-        <ButtonLarge
-         value="Entrar"
-         type="button"
-         onClick={handleSubmit}
-        />
-      </S.BoxLoginForm>
-      {Boolean(errorMessage.length) && <S.BoxLoginError>{errorMessage}</S.BoxLoginError>}
-    </S.BoxLogin>
+        <label htmlFor="password">Senha</label>
+        <input type="password" name="password" id="password" required />
+      </form>
+      <div className="links">
+        <NavLink to={"/users"}>Cadastre-se</NavLink>
+        <button type="submit">Enviar</button>
+      </div>
+    </div>
   );
 };
 
