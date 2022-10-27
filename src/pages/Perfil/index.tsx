@@ -2,6 +2,7 @@ import NavBarr from "components/NavBar";
 import "./Usuarios.scss";
 import { Perfis } from "mocks/perfis";
 import Item from "./item";
+import { NavLink } from "react-router-dom";
 
 type Props = typeof Perfis[0];
 
@@ -15,6 +16,7 @@ export default function Perfil() {
         ))}
       </div>
       <div id="btnPerfil">
+       
         <button id="addPerfil">Adicionar novo Perfil</button>
       </div>
     </>

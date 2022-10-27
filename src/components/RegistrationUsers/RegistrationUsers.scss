@@ -71,22 +71,22 @@
         text-shadow: 2px 2px 8px grey;
     }
 
-    button {
-        flex-direction: row;
-        border-radius: .3rem;
-        border: none;
-        width: 250px;
-        height: 30px;
-        font-size: 16px;
-        font-weight: 600;
-        transition: all .5s;
-    
-    
-        &:hover{
-            cursor: pointer;
-            scale:  1.1;
-            border: none;
-            background-color: #d9d9df;
-        }
-    }
 }
+            button {
+                flex-direction: row;
+                border-radius: .3rem;
+                border: none;
+                width: 250px;
+                height: 30px;
+                font-size: 16px;
+                font-weight: 600;
+                transition: all .5s;
+            
+            
+                &:hover{
+                    cursor: pointer;
+                    scale:  1.1;
+                    border: none;
+                    background-color: #d9d9df;
+                }
+            }

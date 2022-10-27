@@ -40,6 +40,23 @@
         }
 
        
+        button {
+            border-radius: .3rem;
+            margin-top: 1rem;
+            width: 250px;
+            height: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all .5s;
+        
+        
+            &:hover{
+                cursor: pointer;
+                scale:  1.1;
+                border: none;
+                background-color: #d9d9df;
+            }
+        }
     }
 }
 
@@ -56,22 +73,6 @@
         
     }
 
-    button {
-        border-radius: .3rem;
-        width: 150px;
-        height: 30px;
-        font-size: 16px;
-        font-weight: 600;
-        transition: all .5s;
-
-
-        &:hover{
-            cursor: pointer;
-            scale:  1.1;
-            border: none;
-            background-color: #d9d9df;
-        }
-    }
 
     
 }

@@ -6,6 +6,7 @@ import ManageUsers from "components/RegistrationUsers";
 import Perfil from "pages/Perfil";
 import Details from "pages/Details";
 
+
 const Router = () => {
   return (
     <Routes>
@@ -14,6 +15,7 @@ const Router = () => {
       <Route path={RoutePath.USERS} element={<ManageUsers />} />
       <Route path={RoutePath.PROFILE} element={<Perfil />} />
       <Route path={RoutePath.DETAILS} element={<Details />} />
+      
     </Routes>
   );
 };

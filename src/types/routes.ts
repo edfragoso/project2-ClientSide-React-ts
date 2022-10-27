@@ -4,4 +4,6 @@ export enum RoutePath {
   USERS = "/users",
   DETAILS = "/details/:id",
   PROFILE = "/perfil",
+ 
+
 }

@@ -3,7 +3,13 @@ import "./RegistrationUsers.scss";
 import { NavLink } from "react-router-dom";
 
 
+
+
+
+
 const RegistrationUsers = () => {
+
+
   return (
     <>
       <header>
@@ -43,6 +49,9 @@ const RegistrationUsers = () => {
         <div className="check">
           Administrador <input type="checkbox" name="adm" id="adm" required />
         </div>
+
+      
+
         <NavLink to={"/login"}>
         <button type="submit">Cadastrar</button>
         </NavLink>
