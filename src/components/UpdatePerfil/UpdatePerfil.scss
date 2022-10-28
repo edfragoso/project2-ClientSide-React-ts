@@ -1,0 +1,62 @@
+@import 'styles/Variaveis.scss';
+
+
+
+.BoxCreatePerfil {
+    display: flex;
+  	justify-content: center;
+  	align-items: center;
+    background-color: #2D303E;
+    flex-direction: column;
+    height: 100vh;
+    
+
+    h1{
+        font-size: 1.8rem;
+        color:#fff;
+        text-shadow: 2px 2px 8px grey;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-left: .5rem;
+            color:#fff;
+            text-shadow: 2px 2px 8px grey;
+        }
+
+        input {
+            width: 250px;
+            padding: .2rem .4rem;
+            font-size: 1rem;
+            border-radius: .3rem;
+            border: solid 1px;
+            color:grey;
+            
+        }
+
+       
+        button {
+            border-radius: .3rem;
+            margin-top: 1rem;
+            width: 250px;
+            height: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all .5s;
+        
+        
+            &:hover{
+                cursor: pointer;
+                scale:  1.1;
+                border: none;
+                background-color: #d9d9df;
+            }
+        }
+    }
+}
