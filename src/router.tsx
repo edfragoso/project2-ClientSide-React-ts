@@ -7,7 +7,8 @@ import Perfil from "pages/Perfil";
 import Details from "pages/Details";
 import CreatePerfil from "pages/Perfil/CreatePerfil";
 import UpdatePerfil from "pages/Perfil/UpdatePerfil";
-
+import CreateGames from "pages/CrudGames/CreateGames";
+import UpdateGames from "components/UpdateGames";
 
 const Router = () => {
   return (
@@ -19,6 +20,8 @@ const Router = () => {
       <Route path={RoutePath.DETAILS} element={<Details />} />
       <Route path={RoutePath.CREATEPROFILE} element={<CreatePerfil />} />
       <Route path={RoutePath.UPDATEPROFILE} element={<UpdatePerfil />} />
+      <Route path={RoutePath.CREATEGAMES} element={<CreateGames />} />
+      <Route path={RoutePath.UPDATEGAMES} element={<UpdateGames />} />
     </Routes>
   );
 };

@@ -14,7 +14,7 @@ export default function NavBarr() {
             <NavLink to="/perfil">Perfil</NavLink>
           </li>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/CreateGames">Adicionar</NavLink>
           </li>
           <li id="destaque">
             <NavLink to="/users">Cadastre-se</NavLink>
