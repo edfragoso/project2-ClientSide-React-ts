@@ -21,7 +21,7 @@ const UpdateGames = () => {
                 <label htmlFor="gameplay">Gameplay </label>
                 <input type="text" name="gameplay" id="gameplay" placeholder='Adicione o Gameplay do jogo' required/>
 
-                <NavLink to={"/Home"}>
+                <NavLink to={"/"}>
                     <button type="submit">Editar</button>
                 </NavLink>
             </form>

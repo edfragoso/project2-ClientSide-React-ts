@@ -18,7 +18,7 @@ const UpdatePerfil = () => {
           />
           <label htmlFor="image">Adicione sua Foto</label>
           <input type="file" />
-          <NavLink to={"/updeteperfil"}>
+          <NavLink to={"/"}>
             <button type="submit">Enviar</button>
           </NavLink>
         </form>
