@@ -16,14 +16,15 @@ body {
 
 #btnPerfil {
   display: flex;
+  align-items: center;
   justify-content: space-around;
   margin-top: 3rem;
 }
 
 #addPerfil {
-  display: flex;
-  padding: 0.7rem 2rem;
+  /* display: flex; */
   font-size: 1.3rem;
+  padding: 1rem 1rem 2.5rem;
   font-weight: 700;
   background-color: rgba(240, 249, 255, 0);
   border: solid blue;
@@ -37,7 +38,7 @@ body {
     box-shadow:5px 5px 10px  rgb(0, 0, 0) ;
     color: black;
     cursor: pointer;
-    padding-inline: 5rem;
+    /* padding-inline: 5rem; */
   }
 
 }
