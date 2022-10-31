@@ -1,5 +1,5 @@
 import NavCrudGames from "components/NavCrudGames";
-import UpdateGames from "components/UpdateGames";
+import UpdateGames from "components/FormUpdateGames";
 
 const UpGames = () => {
     return (

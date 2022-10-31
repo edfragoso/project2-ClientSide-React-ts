@@ -1,5 +1,5 @@
 import NavCrudPerfil from "components/NavCrudPerfil";
-import UpdatePerfil from "components/UpdatePerfil";
+import UpdatePerfil from "components/FormUpdatePerfil";
 
 const UpPerfil = () => {
   return (

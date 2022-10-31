@@ -1,12 +1,25 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./FormCreateGame.scss";
+
+
+
+
+// const [nome, definirNome] = useState<string>();
+// const [descricacao, definirDescricao] = useState<string>();
+// const [ano, definirAno] = useState<string>();
+// const [image, definirImage] = useState<string>();
 
 const CreateGame = () => {
   return (
     <div className="BoxCreateGame">
       <h1>Cadastre um novo Game</h1>
 
-      <form action="">
+      <form  onSubmit={(e) => {
+        e.preventDefault();
+        // CreateGame();
+      }}>
+
         <label htmlFor="title">Nome do Jogo</label>
         <input
           type="text"
@@ -14,6 +27,7 @@ const CreateGame = () => {
           id="title"
           placeholder="Digite o nome do jogo"
           required
+        //   onChange={(e) => definirNome(e.target.value) }
         />
         <label htmlFor="descricao">Descrição</label>
         <input
@@ -22,6 +36,7 @@ const CreateGame = () => {
           id="descricao"
           placeholder="descricao"
           required
+        //   onChange={(e) => { definirDescricao(e.target.value) }}
         />
         <label htmlFor="year">Ano de Lançamento</label>
         <input
@@ -30,6 +45,7 @@ const CreateGame = () => {
           id="year"
           placeholder="Digite o ano de lançamento"
           required
+        //   onChange={(e) => { definirAno(e.target.value) }}
         />
         <label htmlFor="image">Adicione a imagem</label>
         <input
@@ -38,6 +54,7 @@ const CreateGame = () => {
           id="image"
           placeholder="Adicione a imagem do jogo"
           required
+        //   onChange={(e) => { definirImage(e.target.value) }}
         />
         <label htmlFor="trailer">Trailer </label>
         <input

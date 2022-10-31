@@ -8,7 +8,7 @@ import Details from "pages/Details";
 import CreatePerfil from "pages/Perfil/CreatePerfil";
 import UpdatePerfil from "pages/Perfil/UpdatePerfil";
 import CreateGames from "pages/CrudGames/CreateGames";
-import UpdateGames from "components/UpdateGames";
+import UpdateGames from "components/FormUpdateGames";
 
 const Router = () => {
   return (
