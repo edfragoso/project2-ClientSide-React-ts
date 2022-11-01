@@ -4,8 +4,10 @@ interface IUser {
   id: string;
   name: string;
   email: string;
-  updatedAt: Date;
-  createdAt: Date;
+  password:string;
+  cpf: string;
+  updatedAt?: Date;
+  createdAt?: Date;
 }
 
 const getAllUsers = () => Api.get<IUser[]>('/users');
