@@ -14,7 +14,7 @@ const RegistrationUsers = () => {
 
   const submitForm = (event: any) => {
     event.preventDefault();
-   
+
     axios({
       method: "post",
       url: "https://gamingdev.onrender.com/users",
@@ -28,11 +28,11 @@ const RegistrationUsers = () => {
     })
       .then(() => {
         alert("Cadastro efetuado com sucesso");
-        window.location.href="http://localhost:3000/Login"
+        window.location.href = "http://localhost:3000/Login";
       })
       .catch(() => {
         alert("Ops! Algo de errado não esta certo");
-        console.log(submitForm,name,email,cpf,password,admin);
+        console.log(submitForm, name, email, cpf, password, admin);
       });
   };
 
@@ -96,8 +96,6 @@ const RegistrationUsers = () => {
           </div>
           <button type="submit">Cadastrar</button>
         </form>
-
-      
       </div>
     </>
   );
