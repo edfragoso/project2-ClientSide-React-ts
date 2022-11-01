@@ -1,81 +1,109 @@
+import axios from "axios";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import "./FormCreateGame.scss";
 
-
-
-
-// const [nome, definirNome] = useState<string>();
-// const [descricacao, definirDescricao] = useState<string>();
-// const [ano, definirAno] = useState<string>();
-// const [image, definirImage] = useState<string>();
-
 const CreateGame = () => {
+  const [name, setName] = useState<string>("");
+  const [descricao, setDescricao] = useState<string>("");
+  const [ano, setAno] = useState<string>("");
+  const [imagem, setImagem] = useState<string>("");
+  const [trailer, setTrailer] = useState<string>("");
+  const [gameplay, setGameplay] = useState<string>("");
+
+  const submitForm = (event: any) => {
+    event.preventDefault();
+
+    axios({
+      method: "post",
+      // url: "https://gamingdev.onrender.com/users",
+      data: {
+        name: name,
+        descricao: descricao,
+        ano: ano,
+        imagem: imagem,
+        trailer: trailer,
+        gameplay: gameplay,
+      },
+    });
+  };
+
   return (
     <div className="BoxCreateGame">
       <h1>Cadastre um novo Game</h1>
 
-      <form  onSubmit={(e) => {
-        e.preventDefault();
-        // CreateGame();
-      }}>
-
+      <form onSubmit={submitForm}>
         <label htmlFor="title">Nome do Jogo</label>
         <input
           type="text"
           name="title"
           id="title"
+          value={name}
           placeholder="Digite o nome do jogo"
           required
-        //   onChange={(e) => definirNome(e.target.value) }
+          onChange={(e) => setName(e.target.value)}
         />
         <label htmlFor="descricao">Descrição</label>
         <input
           type="text"
           name="descricao"
           id="descricao"
+          value={descricao}
           placeholder="descricao"
           required
-        //   onChange={(e) => { definirDescricao(e.target.value) }}
+          onChange={(e) => {
+            setDescricao(e.target.value);
+          }}
         />
         <label htmlFor="year">Ano de Lançamento</label>
         <input
           type="text"
           name="year"
           id="year"
+          value={ano}
           placeholder="Digite o ano de lançamento"
           required
-        //   onChange={(e) => { definirAno(e.target.value) }}
+          onChange={(e) => {
+            setAno(e.target.value);
+          }}
         />
         <label htmlFor="image">Adicione a imagem</label>
         <input
           type="file"
           name="image"
           id="image"
+          value={imagem}
           placeholder="Adicione a imagem do jogo"
           required
-        //   onChange={(e) => { definirImage(e.target.value) }}
+          onChange={(e) => {
+            setImagem(e.target.value);
+          }}
         />
         <label htmlFor="trailer">Trailer </label>
         <input
           type="text"
           name="trailer"
           id="trailer"
+          value={trailer}
           placeholder="Adicione o Trailer do jogo"
           required
+          onChange={(e) => {
+            setTrailer(e.target.value);
+          }}
         />
         <label htmlFor="gameplay">Gameplay </label>
         <input
           type="text"
           name="gameplay"
           id="gameplay"
+          value={gameplay}
           placeholder="Adicione o Gameplay do jogo"
           required
+          onChange={(e) => {
+            setGameplay(e.target.value);
+          }}
         />
 
-        <NavLink to={"/"}>
-          <button type="submit">Criar</button>
-        </NavLink>
+        <button type="submit">Criar</button>
       </form>
     </div>
   );
