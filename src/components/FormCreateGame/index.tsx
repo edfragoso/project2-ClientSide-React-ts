@@ -25,6 +25,14 @@ const CreateGame = () => {
         gameplay: gameplay,
       },
     });
+    // .then(() => {
+    //   alert("Game criado com sucesso");
+    //   window.location.href = "http://localhost:3000/Home";
+    // })
+    // .catch(() => {
+    //   alert("Ops! Algo de errado não esta certo");
+      
+    // });
   };
 
   return (
