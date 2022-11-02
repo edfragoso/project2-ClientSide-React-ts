@@ -28,7 +28,7 @@ const ProductItemList = (props: Props) => {
   }
   useEffect(() => {
 
-    const token = sessionStorage.getItem('token')
+    const token = localStorage.getItem('token')
 
     axios
       .get<Api[]>("https://gamingdev.onrender.com/games", {
