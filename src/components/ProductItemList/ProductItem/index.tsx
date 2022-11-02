@@ -18,7 +18,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
       </div>
       <div className="yearScoreItem">
         <p>Lançamento: {year}</p>
-        <p>Nota: {score}/5</p>
+        <p>Nota: {score}</p>
       </div>
       <NavLink to={`/details/${id}`}>
         <button className="btnDetails" role="listitem">

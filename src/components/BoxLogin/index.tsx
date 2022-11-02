@@ -10,20 +10,33 @@ const BoxLogin = () => {
   const submitForm = (event: any) => {
     event.preventDefault();
 
-    axios({
+    const user = {
+      email,
+      password,
+    };
+    /* axios({
       method: "post",
       url: "https://gamingdev.onrender.com/auth/login",
       data: {
         email: email,
         password: password,
       },
-    })
-      .then((resposta) => {
+    }) */
+    axios
+      .post("https://gamingdev.onrender.com/auth/login", user)
+      .then((response) => {
         alert("ok");
-        sessionStorage.setItem('token', resposta.data.acess_token)
+        localStorage.setItem("token", response.data.token);
+        window.location.href = "http://localhost:3000";
       })
-      .catch(() => {
-        alert("deu errado");
+      .catch((erro) => {
+        if (erro?.response?.data?.message) {
+          alert(erro.response.data.message);
+        } else {
+          alert(
+            "Aconteceu um erro inesperado ao afetuar o seu login! Entre em contato com o suporte!"
+          );
+        }
       });
   };
 
@@ -51,13 +64,12 @@ const BoxLogin = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-          <button type="submit">Entrar</button>
+        <button type="submit">Entrar</button>
       </form>
 
       <div className="links">
         <NavLink to={"/users"}>Cadastre-se</NavLink>
-        <NavLink to={"/"}>
-        </NavLink>
+        <NavLink to={"/"}></NavLink>
       </div>
     </div>
   );
