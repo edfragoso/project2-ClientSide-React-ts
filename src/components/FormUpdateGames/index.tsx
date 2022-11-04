@@ -3,6 +3,40 @@ import { NavLink } from "react-router-dom";
 import "./UpdateGames.scss";
 
 const UpdateGames = () => {
+
+  // const submitForm = (event: any) => {
+  //   event.preventDefault();
+
+
+  //   const createGames = {
+  //     name,
+  //     descricao,
+  //     ano,
+  //     imagem,
+  //     trailer,
+  //     gameplay,
+  //   }
+
+  //   axios
+  //     .post("https://gamingdev.onrender.com/auth/games", createGames)
+  //     .then((response) => {
+  //       alert("ok");
+  //       localStorage.setItem("token", response.data.token);
+  //       window.location.href = "http://localhost:3000";
+  //     })
+  //     .catch((erro) => {
+  //       if (erro?.response?.data?.message) {
+  //         alert(erro.response.data.message);
+  //       } else {
+  //         alert(
+  //           "Aconteceu um erro inesperado ao afetuar o seu login! Entre em contato com o suporte!"
+  //         );
+  //       }
+  //     });
+  
+  // };
+
+
   return (
     <>
       <header>
