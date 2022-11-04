@@ -9,22 +9,28 @@ const FormCreatePerfil = () => {
   const submitForm = (event: any) => {
     event.preventDefault();
 
-    axios({
-      method: "post",
-      // url: "https://gamingdev.onrender.com/users",
-      data: {
-        name: name,
-        imagem: imagem,
-      },
-    });
-    // .then(() => {
-    //   alert("Perfil criado com sucesso");
-    //   window.location.href = "http://localhost:3000/Perfil";
-    // })
-    // .catch(() => {
-    //   alert("Ops! Algo de errado não esta certo");
+    const token = localStorage.getItem('token');
 
-    // });
+  interface createPerfil {
+    title: string,
+    image: string,
+  }
+
+  axios
+      .post<createPerfil[]>("https://gamingdev.onrender.com/auth/profiles", )
+      .then((response) => {
+        alert("ok");
+        window.location.href = "http://localhost:3000";
+      })
+      .catch((erro) => {
+        if (erro?.response?.data?.message) {
+          alert(erro.response.data.message);
+        } else {
+          alert(
+            "Aconteceu um erro inesperado ao afetuar o seu login! Entre em contato com o suporte!"
+          );
+        }
+      });
   };
 
   return (
@@ -32,21 +38,21 @@ const FormCreatePerfil = () => {
       <h1>Cadastre seu Perfil</h1>
 
       <form onSubmit={submitForm}>
-        <label htmlFor="name">Nome</label>
+        <label htmlFor="title">Nome</label>
         <input
           type="text"
-          name="name"
-          id="name"
+          name="title"
+          id="title"
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="Digite seu nome."
           required
         />
-        <label htmlFor="imagem">Adicione sua Foto</label>
+        <label htmlFor="image">Adicione sua Foto</label>
         <input
-          type="file"
-          name="imagem"
-          id="imagem"
+          type="text"
+          name="image"
+          id="image"
           value={imagem}
           onChange={(e) => setImagem(e.target.value)}
         />
