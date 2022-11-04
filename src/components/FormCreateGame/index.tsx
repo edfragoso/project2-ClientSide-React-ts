@@ -166,7 +166,7 @@ const CreateGame = () => {
           }}
         />
         <label htmlFor="genreId">Generos</label>
-        Fantasia:
+        {/* Fantasia:
         <input
           type="checkbox"
           name="Fantasy"
@@ -229,7 +229,12 @@ const CreateGame = () => {
           value="f9b4736a-bb83-47be-ada0-3daa53cd55c3"
           checked={handleChecked("f9b4736a-bb83-47be-ada0-3daa53cd55c3")}
           onChange={handleChange}
-        />
+        /> */}
+
+        <input type="text" name="texto" id="texto" value={genreId} onChange={(e) => {
+            setGenreId(e.target.value);
+          }}/>
+
         <button type="submit">Criar</button>
       </form>
     </div>
