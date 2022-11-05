@@ -1,12 +1,9 @@
 import NavBarr from "components/NavBar";
 import "./Usuarios.scss";
-// import { Perfis } from "mocks/perfis";
 import Item from "./item";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
-
-// type Props = typeof Perfis[0];
+import http from "Http";
 
 export interface Profile {
   id: string;
@@ -16,16 +13,11 @@ export interface Profile {
 }
 
 export default function Perfil() {
-
-    const [perfil, setPerfil] = useState<Profile[]>([]);
+  const [perfil, setPerfil] = useState<Profile[]>([]);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    axios
-      .get<Profile[]>("https://gamingdev.onrender.com/profiles", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+    http
+      .get<Profile[]>("profiles")
       .then((response) => setPerfil(response.data))
       .catch((error) => console.log(error));
   }, []);

@@ -1,4 +1,4 @@
-import axios from "axios";
+import http from "Http";
 import { useState } from "react";
 import "./FormCreatePerfil.scss";
 
@@ -9,16 +9,14 @@ const FormCreatePerfil = () => {
   const submitForm = (event: any) => {
     event.preventDefault();
 
-    const token = localStorage.getItem('token');
+    interface createPerfil {
+      title: string;
+      image: string;
+    }
 
-  interface createPerfil {
-    title: string,
-    image: string,
-  }
-
-  axios
-      .post<createPerfil[]>("https://gamingdev.onrender.com/auth/profiles", )
-      .then((response) => {
+    http
+      .post<createPerfil[]>("auth/profiles")
+      .then(() => {
         alert("ok");
         window.location.href = "http://localhost:3000";
       })

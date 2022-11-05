@@ -1,9 +1,8 @@
 import ProductDetails from "components/ProductDetails";
-import { products } from "mocks/products";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavBarr from "components/NavBar";
-import axios from "axios";
+import http from "Http";
 import "./Details.scss";
 
 export interface Game {
@@ -20,20 +19,12 @@ export interface Game {
 
 function Details() {
   const { id } = useParams();
-  const product = products.find((i) => i.id === id);
 
-  const [game, setGame] = useState<Game>()
+  const [game, setGame] = useState<Game>();
   useEffect(() => {
-
-   
-
-    const token = localStorage.getItem('token')
-
-    axios
-      .get<Game>(`https://gamingdev.onrender.com/games/${id}`, {
-        headers:{'Authorization': `Bearer ${token}`}
-      })
-      .then(response => setGame(response.data))
+    http
+      .get<Game>(`/games/${id}`)
+      .then((response) => setGame(response.data))
       .catch((erro) => console.log(erro));
   }, []);
 
@@ -50,4 +41,3 @@ function Details() {
 }
 
 export default Details;
-
