@@ -1,12 +1,13 @@
 import { products } from "mocks/products";
+import { Game } from "pages/Details";
 import { ProductResponse } from "types/Product";
 import "./Details.scss";
 
 type ProductItemProps = {
-  product: ProductResponse;
+  product: Game;
 };
 
-const ProductDetails = ({ product }: ProductItemProps) => {
+const ProductDetails = ({ product}: ProductItemProps ) => {
   const { title, image, description, year, score, trailer, gameplay } = product;
   return (
     <div className="boxDetails">

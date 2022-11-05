@@ -13,7 +13,7 @@ interface Api {
   image:string;
   score:number;
   trailer:string;
-  yaear:string;
+  year:string;
   description:string;
 }
 
