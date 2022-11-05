@@ -4,6 +4,7 @@ import { NavLink, redirect } from "react-router-dom";
 import React, { useState } from "react";
 import { GamesService } from "../../services/UsersService";
 import axios from "axios";
+import http from "Http";
 
 const RegistrationUsers = () => {
   const [name, setName] = useState<string>("");
@@ -14,18 +15,16 @@ const RegistrationUsers = () => {
 
   const submitForm = (event: any) => {
     event.preventDefault();
+    const user = {
+      name,
+      email,
+      password,
+      cpf,
+      admin,
+    };
 
-    axios({
-      method: "post",
-      url: "https://gamingdev.onrender.com/users",
-      data: {
-        name: name,
-        email: email,
-        password: password,
-        cpf: cpf,
-        isAdmin: admin,
-      },
-    })
+    http
+      .post("users", user)
       .then(() => {
         alert("Cadastro efetuado com sucesso");
         window.location.href = "http://localhost:3000/Login";

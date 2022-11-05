@@ -1,4 +1,4 @@
-import axios from "axios";
+import http from "Http";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./BoxLogin.scss";
@@ -14,16 +14,9 @@ const BoxLogin = () => {
       email,
       password,
     };
-    /* axios({
-      method: "post",
-      url: "https://gamingdev.onrender.com/auth/login",
-      data: {
-        email: email,
-        password: password,
-      },
-    }) */
-    axios
-      .post("https://gamingdev.onrender.com/auth/login", user)
+
+    http
+      .post("auth/login", user)
       .then((response) => {
         alert("ok");
         localStorage.setItem("token", response.data.token);
