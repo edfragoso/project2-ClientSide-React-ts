@@ -1,6 +1,6 @@
 import { ProductResponse } from "types/Product";
 import "./style.scss";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 type ProductItemProps = {
   product: /* ProductResponse */ any;
@@ -25,6 +25,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
           Detalhes
         </button>
       </NavLink>
+      <Link to={`/CreateGames/${id}`}> <button> Editar</button></Link>
     </div>
   );
 };

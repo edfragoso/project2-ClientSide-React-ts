@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "./FormCreateGame.scss";
 interface CreateGames {
   title: string;
@@ -13,6 +14,7 @@ interface CreateGames {
 }
 
 const CreateGame = () => {
+  const [game, setGame] = useState<CreateGames>();
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [year, setYear] = useState<string>("");
@@ -20,6 +22,16 @@ const CreateGame = () => {
   const [trailer, setTrailer] = useState<string>("");
   const [gameplay, setGameplay] = useState<string>("");
   const [score, setScore] = useState<string>("");
+
+  const id = useParams;
+
+/*   useEffect(() => {
+    if (id){
+      axios.get<any>(`https://gamingdev.onrender.com/games/${id}`)
+      .then(response => setGame(response.data.title))
+    }
+  }),  */
+
 
   const submitForm = (event: any) => {
     event.preventDefault();
@@ -38,9 +50,8 @@ const CreateGame = () => {
       genreId,
     };
     
-    console.log(newGame);
-
-    axios
+    if (!id){
+      axios
       .post<CreateGames[]>(
         "https://gamingdev.onrender.com/games",
         
@@ -62,6 +73,31 @@ const CreateGame = () => {
           alert("Aconteceu um erro inesperado ao criar uma game!");
         }
       });
+    } else {
+      axios
+      .patch<CreateGames[]>(
+        `https://gamingdev.onrender.com/games/${id}`,
+        
+          newGame
+        ,
+
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      )
+      .then((response) => {
+        alert("ok");
+        window.location.href = "http://localhost:3000";
+      })
+      .catch((erro) => {
+        if (erro?.response?.data?.message) {
+          alert(erro.response.data.message);
+        } else {
+          alert("Aconteceu um erro inesperado ao criar uma game!");
+        }
+      });
+    }
+
   };
 
   const [genreId, setGenreId] = useState<string>();

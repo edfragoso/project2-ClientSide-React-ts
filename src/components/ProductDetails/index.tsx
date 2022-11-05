@@ -1,5 +1,6 @@
 import { products } from "mocks/products";
 import { Game } from "pages/Details";
+import { Link } from "react-router-dom";
 import { ProductResponse } from "types/Product";
 import "./Details.scss";
 
