@@ -3,7 +3,7 @@ import "./style.scss";
 import { NavLink } from "react-router-dom";
 
 type ProductItemProps = {
-  product: ProductResponse;
+  product: /* ProductResponse */ any;
 };
 const ProductItem = ({ product }: ProductItemProps) => {
   const { image, title, year, score, id } = product;

@@ -1,13 +1,12 @@
 import ProductDetails from "components/ProductDetails";
-
 import { products } from "mocks/products";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavBarr from "components/NavBar";
-/* import { useEffect, useState } from "react"; */
 import axios from "axios";
 import "./Details.scss";
 
-interface Game {
+export interface Game {
   id: string;
   title: string;
   image: string;
@@ -22,20 +21,21 @@ interface Game {
 function Details() {
   const { id } = useParams();
   const product = products.find((i) => i.id === id);
-/* 
+
+  const [game, setGame] = useState<Game>()
   useEffect(() => {
 
-    const [game, setGame] = useState<Game>()
+   
 
     const token = localStorage.getItem('token')
 
     axios
-      .get<Game[]>("https://gamingdev.onrender.com/games/${id}", {
+      .get<Game>(`https://gamingdev.onrender.com/games/${id}`, {
         headers:{'Authorization': `Bearer ${token}`}
       })
       .then(response => setGame(response.data))
       .catch((erro) => console.log(erro));
-  }, []); */
+  }, []);
 
   return (
     <>
@@ -43,14 +43,11 @@ function Details() {
         <NavBarr />
       </header>
       <main className="boxDetails">
-        {product ? <ProductDetails product={product} /> : null}
+        {game ? <ProductDetails product={game} /> : null}
       </main>
     </>
   );
 }
 
 export default Details;
-function useEffect(arg0: () => void, arg1: never[]) {
-  throw new Error("Function not implemented.");
-}
 
