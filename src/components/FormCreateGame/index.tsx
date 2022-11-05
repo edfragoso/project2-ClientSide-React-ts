@@ -64,18 +64,20 @@ const CreateGame = () => {
       });
   };
 
-  const [genreId, setGenreId] = useState<any>([]);
+  const [genreId, setGenreId] = useState<string>();
 
   function handleChange({ target }: any) {
     if (target.checked) {
-      setGenreId([...genreId, target.value]);
+      setGenreId(target.value);
     } else {
-      setGenreId(genreId.filter((genreId: any) => genreId !== target.value));
+      /* setGenreId(genreId.filter((genreId: any) => genreId !== target.value)); */
     }
   }
 
   function handleChecked(genres: any) {
-    return genreId.includes(genres);
+/*     return genreId.includes(genres); */
+/* setGenreId([...genreId, genres]); */
+return true
   }
 
   return (
@@ -166,20 +168,21 @@ const CreateGame = () => {
           }}
         />
         <label htmlFor="genreId">Generos</label>
-        {/* Fantasia:
+        Fantasia:
         <input
           type="checkbox"
           name="Fantasy"
           value="b901bd71-40a2-4515-9154-7c73b29a253b"
-          checked={handleChecked("b901bd71-40a2-4515-9154-7c73b29a253b")}
+          /* checked={handleChecked("b901bd71-40a2-4515-9154-7c73b29a253b")} */
           onChange={handleChange}
         />
-        Ação:
+        
+       Ação:
         <input
           type="checkbox"
           name="Action"
           value="9359f8be-7636-4d05-b193-5e126d5885dd"
-          checked={handleChecked("9359f8be-7636-4d05-b193-5e126d5885dd")}
+          /* checked={handleChecked("9359f8be-7636-4d05-b193-5e126d5885dd")} */
           onChange={handleChange}
         />
         Drama
@@ -187,7 +190,7 @@ const CreateGame = () => {
           type="checkbox"
           name="Drama"
           value="2a31d77e-683c-4d50-bb4f-776178a675b7"
-          checked={handleChecked("2a31d77e-683c-4d50-bb4f-776178a675b7")}
+          /* checked={handleChecked("2a31d77e-683c-4d50-bb4f-776178a675b7")} */
           onChange={handleChange}
         />
         Familia
@@ -195,7 +198,7 @@ const CreateGame = () => {
           type="checkbox"
           name="Family"
           value="1c1c6680-3e90-40e9-a174-0bf4bec62ed5"
-          checked={handleChecked("1c1c6680-3e90-40e9-a174-0bf4bec62ed5")}
+          /* checked={handleChecked("1c1c6680-3e90-40e9-a174-0bf4bec62ed5")} */
           onChange={handleChange}
         />
         Aventura
@@ -203,7 +206,7 @@ const CreateGame = () => {
           type="checkbox"
           name="Adventure"
           value="3bf905f0-17e0-48ee-8843-c3d83426c9b7"
-          checked={handleChecked("3bf905f0-17e0-48ee-8843-c3d83426c9b7")}
+          /* checked={handleChecked("3bf905f0-17e0-48ee-8843-c3d83426c9b7")} */
           onChange={handleChange}
         />
         Horror
@@ -211,7 +214,7 @@ const CreateGame = () => {
           type="checkbox"
           name="Horror"
           value="1837aa1b-8caf-4bf0-bd1d-e1d6c453ab44"
-          checked={handleChecked("1837aa1b-8caf-4bf0-bd1d-e1d6c453ab44")}
+          /* checked={handleChecked("1837aa1b-8caf-4bf0-bd1d-e1d6c453ab44")} */
           onChange={handleChange}
         />
         Mistério
@@ -219,7 +222,7 @@ const CreateGame = () => {
           type="checkbox"
           name="Mistery"
           value="c701476b-ecab-46b5-b814-63a10b0b89d9"
-          checked={handleChecked("c701476b-ecab-46b5-b814-63a10b0b89d9")}
+          /* checked={handleChecked("c701476b-ecab-46b5-b814-63a10b0b89d9")} */
           onChange={handleChange}
         />
         Simulação
@@ -227,14 +230,14 @@ const CreateGame = () => {
           type="checkbox"
           name="Simulation"
           value="f9b4736a-bb83-47be-ada0-3daa53cd55c3"
-          checked={handleChecked("f9b4736a-bb83-47be-ada0-3daa53cd55c3")}
+          /* checked={handleChecked("f9b4736a-bb83-47be-ada0-3daa53cd55c3")} */
           onChange={handleChange}
-        /> */}
+        />
 
-        <input type="text" name="texto" id="texto" value={genreId} onChange={(e) => {
+      {/*   <input type="text" name="texto" id="texto" value={genreId} onChange={(e) => {
             setGenreId(e.target.value);
           }}/>
-
+ */}
         <button type="submit">Criar</button>
       </form>
     </div>
