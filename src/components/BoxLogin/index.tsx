@@ -20,6 +20,8 @@ const BoxLogin = () => {
       .then((response) => {
         alert("ok");
         localStorage.setItem("token", response.data.token);
+        sessionStorage.setItem("id", response.data.user.id);
+
         window.location.href = "http://localhost:3000";
       })
       .catch((erro) => {

@@ -3,19 +3,27 @@ import { useState } from "react";
 import "./FormCreatePerfil.scss";
 
 const FormCreatePerfil = () => {
-  const [name, setName] = useState<string>("");
-  const [imagem, setImagem] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
+  const [imageUrl, setImageUrl] = useState<string>("");
 
   const submitForm = (event: any) => {
     event.preventDefault();
 
+    const UserId = sessionStorage.getItem("id");
+    const userId = UserId;
     interface createPerfil {
       title: string;
-      image: string;
+      imageUrl: string;
     }
 
+    const perfil = {
+      title,
+      imageUrl,
+      userId,
+    };
+
     http
-      .post<createPerfil[]>("auth/profiles")
+      .post<createPerfil[]>("profiles", perfil)
       .then(() => {
         alert("ok");
         window.location.href = "http://localhost:3000";
@@ -39,20 +47,20 @@ const FormCreatePerfil = () => {
         <label htmlFor="title">Nome</label>
         <input
           type="text"
-          name="title"
+          title="title"
           id="title"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
           placeholder="Digite seu nome."
           required
         />
         <label htmlFor="image">Adicione sua Foto</label>
         <input
           type="text"
-          name="image"
+          title="image"
           id="image"
-          value={imagem}
-          onChange={(e) => setImagem(e.target.value)}
+          value={imageUrl}
+          onChange={(e) => setImageUrl(e.target.value)}
         />
 
         <button type="submit">Enviar</button>

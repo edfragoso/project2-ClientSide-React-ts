@@ -1,4 +1,3 @@
-import { ProductResponse } from "types/Product";
 import "./style.scss";
 import { NavLink } from "react-router-dom";
 
