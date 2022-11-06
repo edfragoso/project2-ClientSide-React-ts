@@ -1,5 +1,7 @@
+import http from "Http";
 import { products } from "mocks/products";
 import { Game } from "pages/Details";
+import { NavLink } from "react-router-dom";
 import { ProductResponse } from "types/Product";
 import "./Details.scss";
 
@@ -7,8 +9,20 @@ type ProductItemProps = {
   product: Game;
 };
 
+
 const ProductDetails = ({ product}: ProductItemProps ) => {
-  const { title, image, description, year, score, trailer, gameplay } = product;
+  const { id, title, image, description, year, score, trailer, gameplay } = product;
+
+ const deleteGame = (deletedGame: Game) =>{
+
+  http.delete(`games/${deletedGame.id}`)
+  .then(response => {
+    alert(`ok`);
+    window.location.href = "http://localhost:3000";
+  }
+ )};
+
+  
   return (
     <div className="boxDetails">
       
@@ -25,6 +39,9 @@ const ProductDetails = ({ product}: ProductItemProps ) => {
             ano de lançamento: {year}
           </p>
 
+          <NavLink to={`/deletegames/${id}`}>
+        <button onClick={() => deleteGame(product)}> Deletar </button>
+       </NavLink>
           <p>IMDb:{score}/5</p>
         </div>
       </div>
@@ -58,5 +75,6 @@ const ProductDetails = ({ product}: ProductItemProps ) => {
     </div>
   );
 };
+
 
 export default ProductDetails;
