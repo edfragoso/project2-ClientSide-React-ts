@@ -1,4 +1,5 @@
 import axios from "axios";
+import http from "Http";
 import { useState } from "react";
 import "./FormCreateGame.scss";
 interface CreateGames {
@@ -40,26 +41,16 @@ const CreateGame = () => {
     
     console.log(newGame);
 
-    axios
-      .post<CreateGames[]>(
-        "https://gamingdev.onrender.com/games",
-        
-          newGame
-        ,
-
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      )
+    http.post("games", newGame)
       .then((response) => {
-        alert("ok");
+        alert("Jogo criado com sucesso!");
         window.location.href = "http://localhost:3000";
       })
       .catch((erro) => {
         if (erro?.response?.data?.message) {
           alert(erro.response.data.message);
         } else {
-          alert("Aconteceu um erro inesperado ao criar uma game!");
+          alert("Aconteceu um erro inesperado ao criar o jogo!");
         }
       });
   };
