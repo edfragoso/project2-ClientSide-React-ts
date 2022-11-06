@@ -5,8 +5,12 @@ import { NavLink } from "react-router-dom";
 type ProductItemProps = {
   product: /* ProductResponse */ any;
 };
+
 const ProductItem = ({ product }: ProductItemProps) => {
+
+
   const { image, title, year, score, id } = product;
+  
   return (
     <div className="card">
       <div className="imageItem">
@@ -28,6 +32,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
       <NavLink to={`/updategames/${id}`}>
         <button>Editar</button>
       </NavLink>
+
     </div>
   );
 };
