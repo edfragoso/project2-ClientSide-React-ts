@@ -1,11 +1,20 @@
 import "./Item.scss";
 import { Profile } from "../";
 import { NavLink } from "react-router-dom";
+import http from "Http";
 
 
 
 export default function Item(props: Profile) {
   const {id, imageUrl, title } = props;
+
+  const deleteProfile = (deletedProfile: Profile) => {
+    http.delete(`profiles/${deletedProfile.id}`)
+    .then(response => {
+      alert(`Deletado com sucesso`);
+      window.location.href = "http://localhost:3000/perfil"
+    })
+  }
 
   return (
     <div className="box1">
@@ -17,6 +26,9 @@ export default function Item(props: Profile) {
       </div>
       <NavLink to={`/updateperfil/${id}`}>
         <button>Editar</button>
+      </NavLink>
+      <NavLink to={`/deleteperfil/${id}`}>
+        <button onClick={() => deleteProfile(props)}>Excluir</button>
       </NavLink>
     </div>
   );

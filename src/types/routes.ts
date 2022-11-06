@@ -5,7 +5,7 @@ export enum RoutePath {
   PROFILE = "/perfil",
   CREATEPROFILE = "/createperfil",
   UPDATEPROFILE = "/updateperfil/:id",
-  DELETEPROFILE= "/deleteperfil/id",
+  DELETEPROFILE= "/deleteperfil/:id",
   DETAILS = "/details/:id",
   CREATEGAMES = "/creategames",
   UPDATEGAMES = "/updategames/:id",
