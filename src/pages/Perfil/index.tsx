@@ -18,7 +18,10 @@ export default function Perfil() {
   useEffect(() => {
     http
       .get<Profile[]>("profiles")
-      .then((response) => setPerfil(response.data))
+      .then((response) => {
+        console.log(response.data)
+        setPerfil(response.data)
+      })
       .catch((error) => console.log(error));
   }, []);
 
