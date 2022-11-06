@@ -13,6 +13,8 @@ http.interceptors.request.use(
     const token = localStorage.getItem("token");
     if (token && config.headers) {
        config.headers.Authorization = `Bearer ${token}`;
+    } else {
+      window.location.href = "http://localhost:3000/login"
     }
 
     return config;

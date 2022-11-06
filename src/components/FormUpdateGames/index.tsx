@@ -68,14 +68,14 @@ const UpdateGames = () => {
 
     http.patch(`games/${id}`, editedGame)
     .then((response) => {
-      alert('ok');
+      alert('Jogo editado com sucesso!');
       window.location.href = "http://localhost:3000";
     })
     .catch((erro) => {
       if (erro?.response?.data?.message) {
         alert(erro.response.data.message);
       } else {
-        alert("Aconteceu um erro inesperado ao criar uma game!");
+        alert("Aconteceu um erro inesperado ao editar o jogo!");
       }
     });
  
