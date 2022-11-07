@@ -1,6 +1,6 @@
 import http from "Http";
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import "./UpdatePerfil.scss";
 
 interface UpdateProfiles {
@@ -35,7 +35,9 @@ const UpdatePerfil = () => {
     http.patch(`profiles/${id}`, editedProfile)
     .then((response) => {
       alert('ok');
-      window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app";
+     /*  window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app"; */
+     const navigate =  useNavigate()
+     navigate('/')
     })
     .catch((erro) => {
       if (erro?.response?.data?.message) {

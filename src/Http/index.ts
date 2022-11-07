@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const http = axios.create({
   baseURL: "https://gamingdev.onrender.com/",
@@ -14,7 +15,9 @@ http.interceptors.request.use(
     if (token && config.headers) {
        config.headers.Authorization = `Bearer ${token}`;
     } else {
-      window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login"
+      /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login" */
+     const navigate =  useNavigate()
+     navigate('/login')
     }
 
     return config;

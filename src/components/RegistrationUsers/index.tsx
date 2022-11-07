@@ -1,6 +1,6 @@
 import NavBarr from "components/NavBar";
 import "./RegistrationUsers.scss";
-import { NavLink, redirect } from "react-router-dom";
+import { NavLink, redirect, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { GamesService } from "../../services/UsersService";
 import axios from "axios";
@@ -27,7 +27,9 @@ const RegistrationUsers = () => {
       .post("users", user)
       .then(() => {
         alert("Cadastro efetuado com sucesso");
-        window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login";
+      /*   window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login" */;
+      const navigate =  useNavigate()
+      navigate('/login')
       })
       .catch(() => {
         alert("Ops! Algo de errado não esta certo");

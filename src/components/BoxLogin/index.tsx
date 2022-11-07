@@ -1,6 +1,6 @@
 import http from "Http";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./BoxLogin.scss";
 
 const BoxLogin = () => {
@@ -22,7 +22,9 @@ const BoxLogin = () => {
         localStorage.setItem("token", response.data.token);
         sessionStorage.setItem("id", response.data.user.id);
 
-        window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app";
+        /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app"; */
+        const navigate =  useNavigate()
+        navigate('/')
       })
       .catch((erro) => {
         if (erro?.response?.data?.message) {

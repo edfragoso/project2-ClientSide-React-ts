@@ -1,6 +1,7 @@
 import axios from "axios";
 import http from "Http";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./FormCreateGame.scss";
 interface CreateGames {
   title: string;
@@ -44,7 +45,9 @@ const CreateGame = () => {
     http.post("games", newGame)
       .then((response) => {
         alert("Jogo criado com sucesso!");
-        window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app";
+        /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app" */;
+        const navigate =  useNavigate()
+        navigate('/')
       })
       .catch((erro) => {
         if (erro?.response?.data?.message) {

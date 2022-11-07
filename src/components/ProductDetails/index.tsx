@@ -1,7 +1,7 @@
 import http from "Http";
 import { products } from "mocks/products";
 import { Game } from "pages/Details";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ProductResponse } from "types/Product";
 import "./Details.scss";
 
@@ -16,7 +16,9 @@ const ProductDetails = ({ product }: ProductItemProps) => {
   const deleteGame = (deletedGame: Game) => {
     http.delete(`games/${deletedGame.id}`).then((response) => {
       alert(`ok`);
-      window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app";
+      /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app"; */
+      const navigate =  useNavigate()
+      navigate('/')
     });
   };
 

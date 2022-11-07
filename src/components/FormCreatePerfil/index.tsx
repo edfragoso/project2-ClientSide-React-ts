@@ -1,5 +1,6 @@
 import http from "Http";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./FormCreatePerfil.scss";
 
 const FormCreatePerfil = () => {
@@ -26,7 +27,9 @@ const FormCreatePerfil = () => {
       .post<createPerfil[]>("profiles", perfil)
       .then(() => {
         alert("ok");
-        window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app";
+        /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app"; */
+        const navigate =  useNavigate()
+        navigate('/')
       })
       .catch((erro) => {
         if (erro?.response?.data?.message) {
