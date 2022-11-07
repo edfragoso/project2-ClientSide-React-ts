@@ -12,7 +12,7 @@ export default function Item(props: Profile) {
     http.delete(`profiles/${deletedProfile.id}`)
     .then(response => {
       alert(`Deletado com sucesso`);
-      window.location.href = "http://localhost:3000/perfil"
+      window.location.href = "project2-client-side-react-onrht4oyj-edfragoso.vercel.app/perfil"
     })
   }
 
