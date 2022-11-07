@@ -26,7 +26,7 @@ const FormCreatePerfil = () => {
       .post<createPerfil[]>("profiles", perfil)
       .then(() => {
         alert("ok");
-        window.location.href = "http://localhost:3000";
+        window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app";
       })
       .catch((erro) => {
         if (erro?.response?.data?.message) {
