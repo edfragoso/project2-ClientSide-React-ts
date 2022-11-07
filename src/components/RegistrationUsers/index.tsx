@@ -27,7 +27,7 @@ const RegistrationUsers = () => {
       .post("users", user)
       .then(() => {
         alert("Cadastro efetuado com sucesso");
-        window.location.href = "project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login";
+        window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login";
       })
       .catch(() => {
         alert("Ops! Algo de errado não esta certo");

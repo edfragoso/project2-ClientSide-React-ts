@@ -14,7 +14,7 @@ http.interceptors.request.use(
     if (token && config.headers) {
        config.headers.Authorization = `Bearer ${token}`;
     } else {
-      window.location.href = "project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login"
+      window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login"
     }
 
     return config;
