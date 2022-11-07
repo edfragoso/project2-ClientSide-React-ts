@@ -1,5 +1,5 @@
 import FormCreateGame from "components/FormCreateGame";
-import NavCrudGames from "components/NavCrudGames";
+import NavCrudGames from "components/NavCrud";
 
 
 const Games = () => {

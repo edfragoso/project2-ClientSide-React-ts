@@ -1,9 +1,10 @@
 import ProductDetails from "components/ProductDetails";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import NavBarr from "components/NavBar";
+// import NavBarr from "components/NavBar";
 import http from "Http";
 import "./Details.scss";
+import NavCrud from "components/NavCrud";
 
 export interface Game {
   id: string;
@@ -31,7 +32,7 @@ function Details() {
   return (
     <>
       <header>
-        <NavBarr />
+        <NavCrud />
       </header>
       <main className="boxDetails">
         {game ? <ProductDetails product={game} /> : null}

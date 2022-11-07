@@ -25,10 +25,10 @@ export default function Item(props: Profile) {
         <h2>{title}</h2>
       </div>
       <NavLink to={`/updateperfil/${id}`}>
-        <button>Editar</button>
+        <button className="btnDetails">Editar</button>
       </NavLink>
       <NavLink to={`/deleteperfil/${id}`}>
-        <button onClick={() => deleteProfile(props)}>Excluir</button>
+        <button className="btnDetails" onClick={() => deleteProfile(props)}>Excluir</button>
       </NavLink>
     </div>
   );

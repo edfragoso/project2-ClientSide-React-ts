@@ -9,23 +9,19 @@ type ProductItemProps = {
   product: Game;
 };
 
+const ProductDetails = ({ product }: ProductItemProps) => {
+  const { id, title, image, description, year, score, trailer, gameplay } =
+    product;
 
-const ProductDetails = ({ product}: ProductItemProps ) => {
-  const { id, title, image, description, year, score, trailer, gameplay } = product;
+  const deleteGame = (deletedGame: Game) => {
+    http.delete(`games/${deletedGame.id}`).then((response) => {
+      alert(`ok`);
+      window.location.href = "http://localhost:3000";
+    });
+  };
 
- const deleteGame = (deletedGame: Game) =>{
-
-  http.delete(`games/${deletedGame.id}`)
-  .then(response => {
-    alert(`ok`);
-    window.location.href = "http://localhost:3000";
-  }
- )};
-
-  
   return (
     <div className="boxDetails">
-      
       <div className="title">
         <h2>{title}</h2>
       </div>
@@ -39,10 +35,13 @@ const ProductDetails = ({ product}: ProductItemProps ) => {
             ano de lançamento: {year}
           </p>
 
+          <p className="imdb">IMDb:{score}/5</p>
           <NavLink to={`/deletegames/${id}`}>
-        <button onClick={() => deleteGame(product)}> Deletar </button>
-       </NavLink>
-          <p>IMDb:{score}/5</p>
+            <button  className="btnDetails" onClick={() => deleteGame(product)}>
+              {" "}
+              Deletar{" "}
+            </button>
+          </NavLink>
         </div>
       </div>
       <div className="boxVideos">
@@ -75,6 +74,5 @@ const ProductDetails = ({ product}: ProductItemProps ) => {
     </div>
   );
 };
-
 
 export default ProductDetails;

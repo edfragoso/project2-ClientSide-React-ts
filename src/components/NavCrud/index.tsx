@@ -1,4 +1,4 @@
-import { MdCreate, MdDelete, MdTipsAndUpdates } from 'react-icons/md';
+
 import { NavLink } from 'react-router-dom';
 import './NavCrudGames.scss'
 
@@ -7,7 +7,7 @@ const NavCrudGames = () => {
     <div className="logo">
       <NavLink to="/">GameFlix</NavLink>
     </div>
-    <div className="menu">
+    {/* <div className="menu">
       <NavLink to={"/updategames"}>
         <MdTipsAndUpdates size={20} color="#fff" />
       </NavLink>
@@ -15,7 +15,7 @@ const NavCrudGames = () => {
         <MdCreate size={20} color="#fff" />
       </NavLink>
       <MdDelete size={20} color="#fff" />
-    </div>
+    </div> */}
   </div>);
 }
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import NavCrudGames from "components/NavCrudGames";
+import NavCrudGames from "components/NavCrud";
 import http from "Http";
 import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";

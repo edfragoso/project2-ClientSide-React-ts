@@ -36,7 +36,7 @@ export default function Perfil() {
       </div>
       <div id="btnPerfil">
         <NavLink to={"/createperfil"}>
-          <button id="addPerfil">Adicionar novo Perfil</button>
+          <button  id="addPerfil">Criar </button>
         </NavLink>
       </div>
     </>

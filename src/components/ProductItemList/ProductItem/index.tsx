@@ -29,7 +29,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
         </button>
       </NavLink>
       <NavLink to={`/updategames/${id}`}>
-        <button>Editar</button>
+        <button className="btnDetails">Editar</button>
       </NavLink>
 
     </div>

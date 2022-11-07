@@ -1,11 +1,11 @@
 import FormCreatePerfil from "components/FormCreatePerfil";
-import NavCrudPerfil from "components/NavCrudPerfil";
+import NavCrud from "components/NavCrud";
 
 export default function CreatePerfil() {
   return (
     <>
       <header>
-        <NavCrudPerfil />
+        <NavCrud />
       </header>
       <main>
         <FormCreatePerfil />

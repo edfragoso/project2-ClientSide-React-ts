@@ -1,11 +1,11 @@
-import NavCrudGames from "components/NavCrudGames";
+import NavCrud from "components/NavCrud";
 import UpdateGames from "components/FormUpdateGames";
 
 const UpGames = () => {
     return (
         <>
         <header>
-            <NavCrudGames />
+            <NavCrud />
         </header>
 
         <main>

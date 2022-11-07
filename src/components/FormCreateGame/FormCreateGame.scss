@@ -9,6 +9,8 @@
     background-color: #2D303E;
     flex-direction: column;
     height: 100vh;
+    margin-top: 5rem;
+    
     
 
     h1{
@@ -20,7 +22,7 @@
     form {
         display: flex;
         flex-direction: column;
-        margin-top: 10rem;
+        margin-top: 15rem;
 
         label {
             font-size: 1rem;
@@ -45,6 +47,7 @@
         button {
             border-radius: .3rem;
             margin-top: 1rem;
+            margin-bottom: 3rem;
             width: 250px;
             height: 30px;
             font-size: 16px;

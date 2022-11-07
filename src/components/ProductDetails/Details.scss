@@ -1,3 +1,5 @@
+@import "styles/Variaveis.scss";
+
 .title {
   display: flex;
   justify-content: center;
@@ -18,11 +20,45 @@
   p {
     font-size: 1.2rem;
     font-weight: 400;
+    
   }
 
-  .imgDetails {
-    width: 50rem;
+  .imdb {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 25rem;
+    
   }
+  .imgDetails {
+    max-width: 30rem;
+    min-width: 30rem;
+  }
+
+  .btnDetails {
+    background: $btnDetails;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    padding: 0.5rem 2.5rem;
+    transition: all 0.5s;
+    width: 150px;
+  
+    &:hover {
+      background: linear-gradient(
+        34deg,
+        rgba(141, 136, 152, 0.9) 19%,
+        rgba(134, 183, 199, 0.9) 49%,
+        rgba(83, 218, 144, 0.9) 90%
+      );
+      font-size: 1.2rem;
+      padding: 0.5rem 2.5rem;
+    }
+  }
+  
 }
 
 .boxVideos {
