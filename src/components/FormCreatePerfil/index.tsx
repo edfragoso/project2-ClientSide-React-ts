@@ -6,6 +6,7 @@ import "./FormCreatePerfil.scss";
 const FormCreatePerfil = () => {
   const [title, setTitle] = useState<string>("");
   const [imageUrl, setImageUrl] = useState<string>("");
+  const navigate =  useNavigate()
 
   const submitForm = (event: any) => {
     event.preventDefault();
@@ -28,7 +29,7 @@ const FormCreatePerfil = () => {
       .then(() => {
         alert("ok");
         /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app"; */
-        const navigate =  useNavigate()
+        
         navigate('/')
       })
       .catch((erro) => {

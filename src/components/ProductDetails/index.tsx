@@ -13,11 +13,13 @@ const ProductDetails = ({ product }: ProductItemProps) => {
   const { id, title, image, description, year, score, trailer, gameplay } =
     product;
 
+    const navigate =  useNavigate()
+
   const deleteGame = (deletedGame: Game) => {
     http.delete(`games/${deletedGame.id}`).then((response) => {
       alert(`ok`);
       /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app"; */
-      const navigate =  useNavigate()
+      
       navigate('/')
     });
   };

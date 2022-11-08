@@ -22,9 +22,11 @@ const CreateGame = () => {
   const [trailer, setTrailer] = useState<string>("");
   const [gameplay, setGameplay] = useState<string>("");
   const [score, setScore] = useState<string>("");
+  const navigate =  useNavigate()
 
   const submitForm = (event: any) => {
     event.preventDefault();
+    
 
     const token = localStorage.getItem("token");
 
@@ -46,7 +48,7 @@ const CreateGame = () => {
       .then((response) => {
         alert("Jogo criado com sucesso!");
         /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app" */;
-        const navigate =  useNavigate()
+      
         navigate('/')
       })
       .catch((erro) => {

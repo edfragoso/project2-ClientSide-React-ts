@@ -13,6 +13,7 @@ const UpdatePerfil = () => {
   const [imageUrl, setImageUrl] = useState<string>('')
 
   const {id} = useParams()
+  const navigate =  useNavigate()
 
   useEffect(() =>{
     http.get(`profiles/${id}`)
@@ -21,7 +22,13 @@ const UpdatePerfil = () => {
       setTitle(response.data.title);
       setImageUrl(response.data.imageUrl);
     })
-    .catch((error) => console.log(error))
+    .catch((error) => {
+      console.log(error)
+      if(error == 'NotAuthenticated' ){
+        console.log(`redirecionado`)
+      
+      navigate('/login')}
+    })
   }, [])
 
   const SubmitForm = (event:any) =>{
@@ -36,8 +43,8 @@ const UpdatePerfil = () => {
     .then((response) => {
       alert('ok');
      /*  window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app"; */
-     const navigate =  useNavigate()
-     navigate('/')
+  
+     navigate('/perfil')
     })
     .catch((erro) => {
       if (erro?.response?.data?.message) {

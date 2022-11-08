@@ -7,13 +7,14 @@ import http from "Http";
 
 export default function Item(props: Profile) {
   const {id, imageUrl, title } = props;
+  const navigate =  useNavigate()
 
   const deleteProfile = (deletedProfile: Profile) => {
     http.delete(`profiles/${deletedProfile.id}`)
     .then(response => {
       alert(`Deletado com sucesso`);
    /*    window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/perfil" */
-   const navigate =  useNavigate()
+  
    navigate('/perfil')
     })
   }

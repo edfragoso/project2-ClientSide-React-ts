@@ -13,6 +13,8 @@ const RegistrationUsers = () => {
   const [cpf, setCpf] = useState<string>("");
   const [admin, setAdmin] = useState<boolean>(false);
 
+  const navigate =  useNavigate()
+
   const submitForm = (event: any) => {
     event.preventDefault();
     const user = {
@@ -28,8 +30,8 @@ const RegistrationUsers = () => {
       .then(() => {
         alert("Cadastro efetuado com sucesso");
       /*   window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login" */;
-      const navigate =  useNavigate()
-      navigate('/login')
+     
+      navigate('/login') 
       })
       .catch(() => {
         alert("Ops! Algo de errado não esta certo");

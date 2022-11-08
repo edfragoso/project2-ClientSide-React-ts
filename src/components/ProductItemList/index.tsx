@@ -1,6 +1,7 @@
 import ProductItem from "./ProductItem";
 import "./List.scss";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import http from "Http";
 
 interface Props {
@@ -19,6 +20,7 @@ interface Api {
 const ProductItemList = (props: Props) => {
   const [games, setGames] = useState<Api[]>([]);
   const { seek } = props;
+  const navigate =  useNavigate()
 
   function Seek(title: string | any) {
     const regex = new RegExp(seek, "i");
@@ -28,7 +30,13 @@ const ProductItemList = (props: Props) => {
     http
       .get<Api[]>("games")
       .then((response) => setGames(response.data))
-      .catch((erro) => console.log(erro));
+      .catch((erro) => {
+        console.log(erro)
+        if(erro == 'NotAuthenticated' ){
+          console.log('redirecionado')
+        
+        navigate('/login')}
+      });
   }, []);
 
   useEffect(() => {

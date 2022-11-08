@@ -1,7 +1,7 @@
 import NavBarr from "components/NavBar";
 import "./Usuarios.scss";
 import Item from "./item";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import http from "Http";
 
@@ -16,6 +16,7 @@ export default function Perfil() {
   const [perfil, setPerfil] = useState<Profile[]>([]);
 
   const UserId = sessionStorage.getItem("id");
+  const navigate =  useNavigate()
 
   useEffect(() => {
     http
@@ -23,7 +24,13 @@ export default function Perfil() {
       .then((response) =>
         setPerfil(response.data.filter((p) => p.user.id == UserId))
       )
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error)
+        if(error == 'NotAuthenticated' ){
+          console.log(`redirecionado`)
+        
+        navigate('/login')}
+      });
   }, []);
 
   return (

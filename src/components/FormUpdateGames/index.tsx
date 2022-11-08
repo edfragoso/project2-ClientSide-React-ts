@@ -2,7 +2,7 @@ import axios from "axios";
 import NavCrudGames from "components/NavCrud";
 import http from "Http";
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import "./UpdateGames.scss";
 
 
@@ -32,7 +32,7 @@ const UpdateGames = () => {
   const [update, setUpdate] = useState<string>('')
 
   const {id} = useParams()
-
+  const navigate =  useNavigate()
  
   useEffect(() =>{
 
@@ -48,11 +48,18 @@ const UpdateGames = () => {
       setGameplay(response.data.gameplay);
       setGenreId(response.data.genreId);
     })
-    .catch((error) => console.log(error))
+    .catch((error) => {
+      console.log(error)
+      if(error == 'NotAuthenticated' ){
+        console.log(`redirecionado`)
+      
+      navigate('/login')}
+    })
   }, [])
 
   const SubmitForm = (event: any) => {
     event.preventDefault();
+    const navigate =  useNavigate()
 
     const editedGame = {
       
@@ -69,7 +76,8 @@ const UpdateGames = () => {
     http.patch(`games/${id}`, editedGame)
     .then((response) => {
       alert('Jogo editado com sucesso!');
-      window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app";
+      /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app"; */
+      navigate('/')
     })
     .catch((erro) => {
       if (erro?.response?.data?.message) {

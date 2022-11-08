@@ -1,10 +1,12 @@
 import ProductDetails from "components/ProductDetails";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 // import NavBarr from "components/NavBar";
 import http from "Http";
 import "./Details.scss";
 import NavCrud from "components/NavCrud";
+
+
 
 export interface Game {
   id: string;
@@ -20,13 +22,20 @@ export interface Game {
 
 function Details() {
   const { id } = useParams();
+  const navigate =  useNavigate()
 
   const [game, setGame] = useState<Game>();
   useEffect(() => {
     http
       .get<Game>(`/games/${id}`)
       .then((response) => setGame(response.data))
-      .catch((erro) => console.log(erro));
+      .catch((erro) => {
+        console.log(erro)
+        if(erro == 'NotAuthenticated' ){
+          console.log('redirecionado')
+        
+        navigate('/login')}
+      });
   }, []);
 
   return (

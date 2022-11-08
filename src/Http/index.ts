@@ -16,8 +16,9 @@ http.interceptors.request.use(
        config.headers.Authorization = `Bearer ${token}`;
     } else {
       /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login" */
-     const navigate =  useNavigate()
-     navigate('/login')
+/*      const navigate =  useNavigate()
+     navigate('/login') */
+     throw "NotAuthenticated"
     }
 
     return config;
