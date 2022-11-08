@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { GamesService } from "../../services/UsersService";
 import axios from "axios";
 import http from "Http";
+import { start } from "repl";
 
 const RegistrationUsers = () => {
   const [name, setName] = useState<string>("");
@@ -13,7 +14,7 @@ const RegistrationUsers = () => {
   const [cpf, setCpf] = useState<string>("");
   const [admin, setAdmin] = useState<boolean>(false);
 
-  const navigate =  useNavigate()
+  /* const navigate =  useNavigate() */
 
   const submitForm = (event: any) => {
     event.preventDefault();
@@ -31,7 +32,7 @@ const RegistrationUsers = () => {
         alert("Cadastro efetuado com sucesso");
       /*   window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login" */;
      
-      navigate('/login') 
+     /*  navigate('/login')  */
       })
       .catch(() => {
         alert("Ops! Algo de errado não esta certo");
