@@ -6,16 +6,15 @@ import "./BoxLogin.scss";
 const BoxLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate =  useNavigate()
 
   const SubmitForm = (event: any) => {
     event.preventDefault();
-    const navigate =  useNavigate()
 
     const user = {
       email,
       password,
     };
-
     http
       .post("auth/login", user)
       .then((response) => {
@@ -28,7 +27,7 @@ const BoxLogin = () => {
         navigate('/')
       })
       .catch((erro) => {
-        if (erro?.response?.data?.message) {
+        if (erro.response.data.message) {
           alert(erro.response.data.message);
         } else {
           alert(
