@@ -23,7 +23,7 @@ const RegistrationUsers = () => {
       email,
       password,
       cpf,
-      admin,
+      isAdmin: false,
     };
 
     http
