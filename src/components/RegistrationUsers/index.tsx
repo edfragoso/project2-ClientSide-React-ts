@@ -23,7 +23,7 @@ const RegistrationUsers = () => {
       email,
       password,
       cpf,
-      admin,
+      isAdmin: false,
     };
 
     http
@@ -95,7 +95,6 @@ const RegistrationUsers = () => {
               id="adm"
               checked={admin}
               onChange={(e) => setAdmin(e.target.checked)}
-              required
             />
           </div>
           <button type="submit">Cadastrar</button>

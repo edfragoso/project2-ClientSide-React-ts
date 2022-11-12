@@ -13,18 +13,18 @@ http.interceptors.request.use(
   function (config) {
     const token = localStorage.getItem("token");
     if (token && config.headers) {
-       config.headers.Authorization = `Bearer ${token}`;
-    } else {
+      config.headers.Authorization = `Bearer ${token}`;
+    // } else {
       /* window.location.href = "https://project2-client-side-react-onrht4oyj-edfragoso.vercel.app/login" */
-/*      const navigate =  useNavigate()
+      /*      const navigate =  useNavigate()
      navigate('/login') */
-     throw "NotAuthenticated"
+      //  throw "NotAuthenticated"
     }
 
     return config;
   },
   function (error) {
-    console.log('error no interceptor http')
+    console.log("error no interceptor http");
     return Promise.reject(error);
   }
 );
